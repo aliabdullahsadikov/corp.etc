@@ -791,3 +791,5 @@ jinja2.exceptions.UndefinedError: 'werkzeug.local.LocalProxy object' has no attr
 [05-12 17:40:23] p9792 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
 [05-12 17:41:05] p5536 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
 [05-12 17:44:09] p5484 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:45:50] p672 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:45:52] p6412 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
