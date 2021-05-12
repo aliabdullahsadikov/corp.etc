@@ -1,0 +1,69 @@
+{% extends '/login-layout.html' %}
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+
+{% block body %}
+
+<div id="section-contents" class="login-01">
+    	<div class="container">
+    		<div class="row">
+    			<!-- Block Style 1 -->
+    			<div class="col-12">
+    				<div class="block-style-29">
+    					<div class="login-wrapper">
+							<div class="title">
+								<!--	Flash message section-->
+								{% with messages = get_flashed_messages() %}
+									{% if messages %}
+										<ul class=flashes>
+										{% for message in messages %}
+										  <li style="list-style-type:none;">{{ message }}</li>
+										{% endfor %}
+										</ul>
+									{% else: %}
+										<h3 style="font-family: revert;">Войдите в свой аккаунт</h3>
+									{% endif %}
+								{% endwith %}
+								<!--	end-->
+							</div>
+							<div class="contact-form">
+								<!-- Form -->
+								<form method="post">
+									{{ form.hidden_tag() }}
+									<div class="row">
+										<div class="form-group col-12">
+											{{ form.username(class="form-control", placeholder="Имя")}}
+<!--											<input type="text" class="form-control" name="username" placeholder="" required="">-->
+										</div>
+										<div class="form-group col-12">
+											{{ form.password(class="form-control", placeholder="Пароль") }}
+<!--											<input type="password" class="form-control" name="password" placeholder="Password" required="">-->
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col-md-12">
+
+											<button type="submit" style="font-family: revert;">Войти сейчас</button>
+											<p>или связаться с</p>
+											<a class="login-with" href="#" style="font-family: revert;">Доступ через Google</a>
+											<ul>
+												<li><a class="forgot" href="/reset-password">Забыл пароль?</a></li>
+												<li><a class="register" href="/registration">Создать новый аккаунт</a></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+								<!-- /.Form -->
+							</div>
+						</div>
+    				</div>
+    			</div>
+    			<!-- /.Block Style 1 -->
+    		</div>
+    	</div>
+    </div>
+
+{% endblock %}

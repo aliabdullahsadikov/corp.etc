@@ -1,0 +1,132 @@
+<!-- Peoples -->
+<div class="peoples">
+    <div class="list-users-03">
+        <ul class="images">
+            <span class="count">+172</span>
+            <li><img src="/static/images/profile_3.jpg" alt="Zola"></li>
+            <li><img src="/static/images/profile_4.jpg" alt="Zola"></li>
+            <li><img src="/static/images/profile_5.jpg" alt="Zola"></li>
+            <li><img src="/static/images/profile_6.jpg" alt="Zola"></li>
+            <li><img src="/static/images/profile_7.jpg" alt="Zola"></li>
+        </ul>
+        <p><span>176</span> people are discussing</p>
+    </div>
+</div>
+<!-- /.Peoples -->
+<!-- Peoples -->
+<!--<div class="peoples">-->
+<!--    <div class="list-users-03">-->
+<!--        <ul class="images">-->
+<!--            <form action="/comment" method="post">-->
+<!--            <span class="count">+172</span>-->
+<!--                <li>-->
+<!--                    <img src="/static/images/profile_3.jpg" alt="Zola">-->
+<!--                    <label for=""></label>-->
+<!--                    <input type="text" placeholder="Оставить комментарий">-->
+<!--                </li>-->
+<!--            </form>-->
+<!--            <li><img src="/static/images/profile_4.jpg" alt="Zola"></li>-->
+<!--            <li><img src="/static/images/profile_5.jpg" alt="Zola"></li>-->
+<!--            <li><img src="/static/images/profile_6.jpg" alt="Zola"></li>-->
+<!--            <li><img src="/static/images/profile_7.jpg" alt="Zola"></li>-->
+<!--        </ul>-->
+<!--        <p><span>176</span> people are discussing</p>-->
+<!--    </div>-->
+<!--</div>-->
+<!-- /.Peoples -->
+<!-- Comments -->
+<div class="see-all-comments">
+    <a href="/news/{{news[0].id }}">See All Comments</a>
+</div>
+<div class="comments">
+    {% if user.is_authenticated %}
+    <div class="media">
+        <div class="img-frame1">
+            <img class="mr-3" src="/static/images/profile/{{ user.info.photo }}" alt="Zola">
+        </div>
+        <div class="media-body" style="margin: 0 0 20px 2px;">
+            <form action="/comment" id="comment_form" name="comment" method="post">
+                <input type="hidden" name="news_id" id="news_id" value="{{ news[0].id }}">
+                <input type="hidden" name="parent_id" id="parent_id" value="0">
+                <input type="text" name="message" id="message" placeholder="Оставить комментарий" style="width: 87%; background: #fbfbfb; border-bottom: 1px solid #eeeeee !important; line-height: 2;">
+                <input type="submit" name="submit" style="border-radius: 50%; width:30px; height:30px; cursor:pointer; color: white;" class="bg-orange font" value=">">
+            </form>
+        </div>
+    </div>
+    {% else: %}
+    <div class="media">
+        <div class="media-body" style="margin: 0 0 20px 2px;">
+            <a href="/login" style="color: #e53a24">Авторизуйтесь, </a>если хотите оставить комментарий
+        </div>
+    </div>
+    {% endif %}
+    <!-- Comment Items -->
+    <div class="comment-items">
+        <!-- Comment Item -->
+        {% for comment in news[0].comments %}
+
+        <div class="media" id="comment-item">
+            <div class="img-frame1">
+                <img class="mr-3" src="/static/images/profile/{{ comment.get_user().photo }}" alt="Zola">
+            </div>
+            <div class="media-body">
+                <div class="pin">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+                        <path d="M506.143,165.858l-160-160C342.393,2.107,337.305,0,332.001,0c-5.304,0-10.392,2.107-14.142,5.858
+                            c-9.259,9.259-13.754,25.759-20.558,50.735c-7.977,29.283-18.901,69.388-38.11,88.597c-12.397,12.397-39.128,13.456-67.429,14.577
+                            c-36.565,1.448-78.008,3.089-105.903,30.984c-7.811,7.811-7.811,20.474,0,28.284l90.35,90.35L5.937,477.78
+                            c-7.854,7.767-7.924,20.43-0.157,28.284C9.693,510.019,14.846,512,20.001,512c5.081,0,10.165-1.925,14.063-5.78l170.429-168.551
+                            l88.473,88.473c3.905,3.905,9.023,5.858,14.142,5.858c5.119,0,10.237-1.953,14.142-5.858c25.027-25.027,28.81-60.683,30.39-92.139
+                            c0.554-11.032-7.939-20.424-18.971-20.978c-11.024-0.562-20.424,7.94-20.978,18.971c-0.974,19.373-2.902,35.706-7.838,48.464
+                            L131.561,208.169c17.202-6.669,39.761-7.562,61.784-8.434c34.743-1.376,70.667-2.798,94.13-26.261
+                            c26.725-26.725,39.264-72.757,48.42-106.368c0.995-3.653,2.097-7.7,3.229-11.699l117.47,117.47c-4,1.132-8.046,2.234-11.699,3.229
+                            c-33.611,9.156-79.643,21.695-106.368,48.42c-7.811,7.811-7.811,20.474,0,28.284c7.811,7.81,20.474,7.811,28.284,0
+                            c19.209-19.209,59.313-30.133,88.597-38.11c24.976-6.804,41.476-11.298,50.735-20.558c3.751-3.75,5.858-8.838,5.858-14.142
+                            S509.894,169.608,506.143,165.858z"/>
+                </svg>
+                </div>
+                <h5 class="mt-0">{{ comment.get_user().get_full_name() }} <span style="font-family: 'Roboto-Regular';">{{ comment.get_time() }}</span></h5>
+                <p>{{ comment.message }} ...</p>
+<!--                <p>-->
+                <div class="like-unlike">
+    <!--                like icon-->
+                    <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                      <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+                    </svg>
+    <!--                donw icon-->
+                    <svg style="margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
+                      <path d="M8.864 15.674c-.956.24-1.843-.484-1.908-1.42-.072-1.05-.23-2.015-.428-2.59-.125-.36-.479-1.012-1.04-1.638-.557-.624-1.282-1.179-2.131-1.41C2.685 8.432 2 7.85 2 7V3c0-.845.682-1.464 1.448-1.546 1.07-.113 1.564-.415 2.068-.723l.048-.029c.272-.166.578-.349.97-.484C6.931.08 7.395 0 8 0h3.5c.937 0 1.599.478 1.934 1.064.164.287.254.607.254.913 0 .152-.023.312-.077.464.201.262.38.577.488.9.11.33.172.762.004 1.15.069.13.12.268.159.403.077.27.113.567.113.856 0 .289-.036.586-.113.856-.035.12-.08.244-.138.363.394.571.418 1.2.234 1.733-.206.592-.682 1.1-1.2 1.272-.847.283-1.803.276-2.516.211a9.877 9.877 0 0 1-.443-.05 9.364 9.364 0 0 1-.062 4.51c-.138.508-.55.848-1.012.964l-.261.065zM11.5 1H8c-.51 0-.863.068-1.14.163-.281.097-.506.229-.776.393l-.04.025c-.555.338-1.198.73-2.49.868-.333.035-.554.29-.554.55V7c0 .255.226.543.62.65 1.095.3 1.977.997 2.614 1.709.635.71 1.064 1.475 1.238 1.977.243.7.407 1.768.482 2.85.025.362.36.595.667.518l.262-.065c.16-.04.258-.144.288-.255a8.34 8.34 0 0 0-.145-4.726.5.5 0 0 1 .595-.643h.003l.014.004.058.013a8.912 8.912 0 0 0 1.036.157c.663.06 1.457.054 2.11-.163.175-.059.45-.301.57-.651.107-.308.087-.67-.266-1.021L12.793 7l.353-.354c.043-.042.105-.14.154-.315.048-.167.075-.37.075-.581 0-.211-.027-.414-.075-.581-.05-.174-.111-.273-.154-.315l-.353-.354.353-.354c.047-.047.109-.176.005-.488a2.224 2.224 0 0 0-.505-.804l-.353-.354.353-.354c.006-.005.041-.05.041-.17a.866.866 0 0 0-.121-.415C12.4 1.272 12.063 1 11.5 1z"/>
+                    </svg>
+                </div>
+                <span style="cursor:pointer;" class="comment-answer" data-user-photo="{{user.info.photo}}" id="{{ comment.id }}" data-news-id="{{ comment.news_id }}" >Ответить</span>
+
+<!--                </p>-->
+                <!-- Replied -->
+
+                <div class="media" style="border-top:none;">
+<!--                form for answer-->
+
+<!--                end form-->
+                    <a href="index.html#">
+                        <div class="img-frame2">
+                            <img class="mr-3" src="static/images/profile_9.jpg" alt="Zola">
+                        </div>
+                    </a>
+                    <div class="media-body">
+                        <h5 class="mt-0">Yakie Soliz <span>7 hours ago</span></h5>
+                        <p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. Praesent laoreet ...</p>
+                    </div>
+                </div>
+                <!-- /.Replied -->
+            </div>
+        </div>
+
+        {% endfor %}
+
+        <!-- /Comment Item -->
+    </div>
+    <!-- /Comment Items -->
+
+</div>
+<!-- /.Comments -->

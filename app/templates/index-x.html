@@ -1,0 +1,1219 @@
+{% extends '/layout.html' %}
+
+{% block title %}
+<title>Corp Site</title>
+{% endblock %}
+
+
+{% block body %}
+
+    <!-- Section Slider 01 -->
+<!--	<div id="section-slider" class="slider01">-->
+<!--		&lt;!&ndash; Slider Content &ndash;&gt;-->
+<!--		<div class="slider-content">-->
+<!--	    	<div class="container">-->
+<!--	    		<div class="row">-->
+<!--	    			&lt;!&ndash; Left &ndash;&gt;-->
+<!--	    			<div class="left">-->
+<!--	    				<h4>ADVENTURE</h4>-->
+<!--	    				<h1>Almost on top of the Everest, a picture is worth a thousand words</h1>-->
+<!--	    				<div class="list-users-01">-->
+<!--		    				<ul class="images">-->
+<!--		    					<li><img src="{{ url_for('static', filename='/images/list_user1.jpg')}}" alt="Zola"></li>-->
+<!--		    					<li><img src="{{ url_for('static', filename='/images/list_user2.jpg')}}" alt="Zola"></li>-->
+<!--		    					<li><img src="{{ url_for('static', filename='/images/list_user3.jpg')}}" alt="Zola"></li>-->
+<!--		    					<li><img src="{{ url_for('static', filename='/images/list_user4.jpg')}}" alt="Zola"></li>-->
+<!--		    					<li><img src="{{ url_for('static', filename='/images/list_user5.jpg')}}" alt="Zola"></li>-->
+<!--		    				</ul>-->
+<!--		    				<p><span>Dany, Fredd</span> and 23 more liked this </p>-->
+<!--		    				<div class="comment-share">-->
+<!--			    				<div class="comment">-->
+<!--									<svg enable-background="new 0 0 488 488" version="1.1" viewBox="0 0 488 488" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">-->
+<!--											<path d="m415.7 90.4c-46-40.3-106.9-62.5-171.7-62.5s-125.7 22.2-171.7 62.5c-46.6 40.9-72.3 95.4-72.3 153.6 0 45.9 16.7 90.9 47.2 127.8-6 11.7-14.2 21-24.6 27.8-8.6 5.6-12.7 15.7-10.4 25.7 2.2 9.9 10.2 17.1 20.2 18.5 20.6 2.9 60.8 4.3 98.1-18 8.5-5.1 11.3-16.2 6.2-24.7s-16.2-11.3-24.7-6.2c-15.6 9.3-32.1 13.1-46.4 14.2 8.2-9.8 14.7-21.3 19.5-34.3 2.4-6.4 0.9-13.5-3.6-18.5-29.8-32.2-45.5-71.1-45.5-112.3 0-99.3 93.3-180.1 208-180.1s208 80.8 208 180.1-93.3 180.1-208 180.1c-16.6 0-33.2-1.7-49.2-5.1-9.7-2.1-19.3 4.2-21.3 13.9-2.1 9.7 4.2 19.3 13.9 21.3 18.5 3.9 37.5 5.9 56.7 5.9 64.7 0 125.7-22.2 171.7-62.5 46.5-40.9 72.2-95.4 72.2-153.6s-25.7-112.7-72.3-153.6z"/>-->
+<!--											<circle cx="243.9" cy="244" r="23.6"/>-->
+<!--											<circle cx="317.5" cy="244" r="23.6"/>-->
+<!--											<circle cx="170.3" cy="244" r="23.6"/>-->
+<!--									</svg>-->
+<!--									532-->
+<!--			    				</div>-->
+<!--			    				<div class="share">-->
+<!--									<svg enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">-->
+<!--											<path d="m426 340c-26.583 0-50.387 12.124-66.174 31.131l-66.919-33.283c-9.889-4.916-21.895-0.89-26.813 9.001-4.919 9.89-0.889 21.895 9.001 26.813l67.022 33.333c-1.386 6.117-2.117 12.477-2.117 19.005 0 47.421 38.58 86 86 86s86-38.579 86-86-38.58-86-86-86zm0 132c-25.364 0-46-20.636-46-46 0-6.29 1.269-12.288 3.565-17.754 0.491-0.728 0.941-1.496 1.343-2.304 0.427-0.858 0.786-1.733 1.081-2.618 7.917-13.917 22.886-23.324 40.011-23.324 25.364 0 46 20.636 46 46s-20.636 46-46 46z"/>-->
+<!--											<path d="m426 0c-47.42 0-86 38.579-86 86 0 6.627 0.754 13.081 2.179 19.281l-190.34 95.45c-15.788-18.777-39.444-30.731-65.84-30.731-47.42 0-86 38.579-86 86s38.58 86 86 86c26.282 0 49.848-11.851 65.635-30.488l32.293 16.435c2.906 1.479 6.003 2.18 9.055 2.18 7.286 0 14.31-3.995 17.841-10.933 5.01-9.845 1.092-21.886-8.753-26.896l-32.377-16.477c1.508-6.365 2.306-13.002 2.306-19.821 0-6.709-0.772-13.241-2.233-19.511l190.24-95.401c15.788 18.882 39.512 30.912 65.992 30.912 47.42 0 86-38.579 86-86s-38.58-86-86-86zm-340 302c-25.364 0-46-20.636-46-46s20.636-46 46-46 46 20.636 46 46-20.636 46-46 46zm340-170c-25.364 0-46-20.636-46-46s20.636-46 46-46 46 20.636 46 46-20.636 46-46 46z"/>-->
+<!--									</svg>-->
+<!--									103-->
+<!--			    				</div>-->
+<!--			    			</div>-->
+<!--	    				</div>-->
+<!--	    			</div>-->
+<!--	    			&lt;!&ndash; /.Left &ndash;&gt;-->
+<!--	    			&lt;!&ndash; Right &ndash;&gt;-->
+<!--	    			<div class="right">-->
+<!--	    				&lt;!&ndash; Item &ndash;&gt;-->
+<!--	    				<div class="item">-->
+<!--	    					<div class="header">-->
+<!--	    						<span class="progress"></span>-->
+<!--								<svg enable-background="new 0 0 490.442 490.442" version="1.1" viewBox="0 0 490.44 490.44" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">-->
+<!--										<path d="m270.42 245.34 42-42c7.3-7.1 7.3-18.5 0.2-25.5-7-7-18.4-7-25.5 0l-42 42-42-42c-7-7-18.4-7-25.5 0-7 7-7 18.4 0 25.5l42 42-42 42c-7 7-7 18.4 0 25.5 3.5 3.5 8.1 5.3 12.7 5.3s9.2-1.8 12.7-5.3l42-42 42 42c3.5 3.5 8.1 5.3 12.7 5.3s9.2-1.8 12.7-5.3c7-7 7-18.4 0-25.5l-42-42z"/>-->
+<!--										<path d="m418.62 71.842c-7-7-18.4-7-25.4 0l-56 55.9c-7 7-7 18.4 0 25.5 7 7 18.4 7 25.5 0l42.7-42.7c69.2 82.1 65.1 205.3-12.2 282.6-39.5 39.5-92.1 61.3-148 61.3s-108.4-21.7-148-61.2c-81.6-81.6-81.6-214.3 0-295.9 50.1-50.1 121.6-71.4 191.1-56.8 9.7 2 19.3-4.2 21.3-13.9s-4.2-19.3-13.9-21.3c-81.4-17.2-165.1 7.7-223.9 66.5-46.3 46.3-71.8 107.9-71.8 173.4s25.5 127.1 71.8 173.4 107.9 71.8 173.4 71.8 127.1-25.5 173.4-71.8 71.8-107.9 71.8-173.4-25.5-127.1-71.8-173.4z"/>-->
+<!--								</svg>-->
+<!--	    					</div>-->
+<!--	    					<div class="content">-->
+<!--	    						<p>A dawn with growth in the global economy</p>-->
+<!--	    						<span>5 MIN READ</span>-->
+<!--	    					</div>-->
+<!--	    				</div>-->
+<!--	    				&lt;!&ndash; /.Item &ndash;&gt;-->
+<!--	    				&lt;!&ndash; Item &ndash;&gt;-->
+<!--	    				<div class="item">-->
+<!--	    					<div class="header">-->
+<!--	    						<span class="progress"></span>-->
+<!--								<svg enable-background="new 0 0 490.442 490.442" version="1.1" viewBox="0 0 490.44 490.44" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">-->
+<!--										<path d="m270.42 245.34 42-42c7.3-7.1 7.3-18.5 0.2-25.5-7-7-18.4-7-25.5 0l-42 42-42-42c-7-7-18.4-7-25.5 0-7 7-7 18.4 0 25.5l42 42-42 42c-7 7-7 18.4 0 25.5 3.5 3.5 8.1 5.3 12.7 5.3s9.2-1.8 12.7-5.3l42-42 42 42c3.5 3.5 8.1 5.3 12.7 5.3s9.2-1.8 12.7-5.3c7-7 7-18.4 0-25.5l-42-42z"/>-->
+<!--										<path d="m418.62 71.842c-7-7-18.4-7-25.4 0l-56 55.9c-7 7-7 18.4 0 25.5 7 7 18.4 7 25.5 0l42.7-42.7c69.2 82.1 65.1 205.3-12.2 282.6-39.5 39.5-92.1 61.3-148 61.3s-108.4-21.7-148-61.2c-81.6-81.6-81.6-214.3 0-295.9 50.1-50.1 121.6-71.4 191.1-56.8 9.7 2 19.3-4.2 21.3-13.9s-4.2-19.3-13.9-21.3c-81.4-17.2-165.1 7.7-223.9 66.5-46.3 46.3-71.8 107.9-71.8 173.4s25.5 127.1 71.8 173.4 107.9 71.8 173.4 71.8 127.1-25.5 173.4-71.8 71.8-107.9 71.8-173.4-25.5-127.1-71.8-173.4z"/>-->
+<!--								</svg>-->
+<!--	    					</div>-->
+<!--	    					<div class="content">-->
+<!--	    						<p>A dawn with growth in the global economy</p>-->
+<!--	    						<span>5 MIN READ</span>-->
+<!--	    					</div>-->
+<!--	    				</div>-->
+<!--	    				&lt;!&ndash; /.Item &ndash;&gt;-->
+<!--	    				&lt;!&ndash; Item &ndash;&gt;-->
+<!--	    				<div class="item">-->
+<!--	    					<div class="header">-->
+<!--	    						<span class="progress"></span>-->
+<!--								<svg enable-background="new 0 0 490.442 490.442" version="1.1" viewBox="0 0 490.44 490.44" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">-->
+<!--										<path d="m270.42 245.34 42-42c7.3-7.1 7.3-18.5 0.2-25.5-7-7-18.4-7-25.5 0l-42 42-42-42c-7-7-18.4-7-25.5 0-7 7-7 18.4 0 25.5l42 42-42 42c-7 7-7 18.4 0 25.5 3.5 3.5 8.1 5.3 12.7 5.3s9.2-1.8 12.7-5.3l42-42 42 42c3.5 3.5 8.1 5.3 12.7 5.3s9.2-1.8 12.7-5.3c7-7 7-18.4 0-25.5l-42-42z"/>-->
+<!--										<path d="m418.62 71.842c-7-7-18.4-7-25.4 0l-56 55.9c-7 7-7 18.4 0 25.5 7 7 18.4 7 25.5 0l42.7-42.7c69.2 82.1 65.1 205.3-12.2 282.6-39.5 39.5-92.1 61.3-148 61.3s-108.4-21.7-148-61.2c-81.6-81.6-81.6-214.3 0-295.9 50.1-50.1 121.6-71.4 191.1-56.8 9.7 2 19.3-4.2 21.3-13.9s-4.2-19.3-13.9-21.3c-81.4-17.2-165.1 7.7-223.9 66.5-46.3 46.3-71.8 107.9-71.8 173.4s25.5 127.1 71.8 173.4 107.9 71.8 173.4 71.8 127.1-25.5 173.4-71.8 71.8-107.9 71.8-173.4-25.5-127.1-71.8-173.4z"/>-->
+<!--								</svg>-->
+<!--	    					</div>-->
+<!--	    					<div class="content">-->
+<!--	    						<p>A dawn with growth in the global economy</p>-->
+<!--	    						<span>5 MIN READ</span>-->
+<!--	    					</div>-->
+<!--	    				</div>-->
+<!--	    				&lt;!&ndash; /.Item &ndash;&gt;-->
+<!--	    			</div>-->
+<!--	    			&lt;!&ndash; /.Right &ndash;&gt;-->
+<!--	    		</div>-->
+<!--	    	</div>-->
+<!--	    </div>-->
+<!--	    &lt;!&ndash; /.Slider Content &ndash;&gt;-->
+<!--		&lt;!&ndash; Slider Image &ndash;&gt;-->
+<!--		<div class="slider-image">-->
+<!--			<img class="img-fluid" src="{{ url_for('static', filename='/images/slider1.jpg')}}" alt="Zola">-->
+<!--		</div>-->
+<!--		&lt;!&ndash; /.Slider Image &ndash;&gt;-->
+<!--    </div>-->
+    <!-- /.Section Slider 01 -->
+    <!-- Section Contents -->
+    <div id="section-contents" class="homepage-01">
+    	<div class="container">
+    		<div class="row">
+    			<!-- Block Style 1 -->
+    			<div class="col-12 col-lg-3">
+    				<div class="block-style-1">
+    					<!-- Block Title 1 -->
+    					<div class="block-title-1">
+    						<h3>THE MOST READ</h3>
+    						<img src="{{ url_for('static', filename='/images/svg/more-1.svg')}}" alt="Zola">
+    					</div>
+    					<!-- /.Block Title 1 -->
+    					<!-- Block Content -->
+    					<div class="block-content">
+    						<div class="block-content_header">
+    							<img src="{{ url_for('static', filename='/images/profile_1.jpg')}}" alt="Zola">
+    							<p>Louis Miller</p>
+    						</div>
+    						<div class="block-content_thumbnail">
+    							<span class="bg-red">Sport</span>
+								<a href="index.html#">
+									<img src="{{ url_for('static', filename='/images/thumbnail_01.jpg')}}" alt="Zola">
+								</a>
+    						</div>
+    						<div class="block-content_text">
+								<a href="index.html#">
+									<h4>All the Young People of this country are</h4>
+								</a>
+								<p>Aliquam vehicula mollis urna vel dignissim. Integer tincipunt <a href="index.html#">continued</a></p>
+    						</div>
+    					</div>
+    					<!-- /.Block Content -->
+						<!-- Block Content -->
+    					<div class="block-content">
+    						<div class="block-content_header">
+    							<img src="{{ url_for('static', filename='/images/profile_2.jpg')}}" alt="Zola">
+    							<p>Ligthon Simons</p>
+    						</div>
+    						<div class="block-content_thumbnail">
+    							<span class="bg-yellow">Life</span>
+								<a href="index.html#">
+									<img src="{{ url_for('static', filename='/images/thumbnail_02.jpg')}}" alt="Zola">
+								</a>
+    						</div>
+    						<div class="block-content_text">
+								<a href="index.html#">
+									<h4>The Growth of more and mor Women Entrepreneurs are</h4>
+								</a>
+								<p>Aliquam vehicula mollis urna vel dignissim. Integer tincipunt <a href="index.html#">continued</a></p>
+    						</div>
+    					</div>
+    					<!-- /.Block Content -->
+    				</div>
+    			</div>
+    			<!-- /.Block Style 1 -->
+    			<!-- Block Style 2 -->
+    			<div class="col-12 col-lg-5">
+    				<div class="block-style-2">
+    					<!-- Block Title 2 -->
+    					<div class="block-title-2">
+    						<h3>TOP COMMENTS</h3>
+    					</div>
+    					<!-- /.Block Title 2 -->
+    					<!-- Contents -->
+						<div class="contents">
+							<!-- Thumbnail -->
+							<div class="thumbnail-1">
+								<span class="bg-red">Life and Arts</span>
+								<a href="index.html#">
+									<img src="{{ url_for('static', filename='/images/thumbnail_03.jpg')}}" alt="Zola">
+									<div class="overlay">
+										<div class="overlay-content">
+											<div class="list-users-02">
+							    				<ul class="images">
+							    					<li><img src="{{ url_for('static', filename='/images/list_user1.jpg')}}" alt="Zola"></li>
+							    					<li><img src="{{ url_for('static', filename='/images/list_user2.jpg')}}" alt="Zola"></li>
+							    				</ul>
+							    				<p><span>Josh Lankaster</span> and <span>Sophy Clarenz</span></p>
+						    				</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<!-- /.Thumbnail -->
+							<!-- Content Wrapper -->
+							<div class="content-wrapper">
+								<!-- Date -->
+								<div class="date">
+									<h5>February 12 at 7:37 PM</h5>
+								</div>
+								<!-- /.Date -->
+								<!-- Title -->
+								<div class="title">
+									<a href="index.html#">
+										<h2>More Vacationers Continue Choosing the same Destination for this Summer with Their</h2>
+									</a>
+								</div>
+								<!-- /.Title -->
+								<!-- Description -->
+								<div class="desc">
+									<p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. Praesent laoreet interdum diam, ac ornare dolor mattis up.</p>
+								</div>
+								<!-- /.Description -->
+							</div>
+							<!-- Content Wrapper -->
+							<!-- Peoples -->
+							<div class="peoples">
+								<div class="list-users-03">
+				    				<ul class="images">
+				    					<span class="count">+172</span>
+				    					<li><img src="{{ url_for('static', filename='/images/profile_3.jpg')}}" alt="Zola"></li>
+				    					<li><img src="{{ url_for('static', filename='/images/profile_4.jpg')}}" alt="Zola"></li>
+				    					<li><img src="{{ url_for('static', filename='/images/profile_5.jpg')}}" alt="Zola"></li>
+				    					<li><img src="{{ url_for('static', filename='/images/profile_6.jpg')}}" alt="Zola"></li>
+				    					<li><img src="{{ url_for('static', filename='/images/profile_7.jpg')}}" alt="Zola"></li>
+
+				    				</ul>
+				    				<p><span>176</span> people are discussing</p>
+			    				</div>
+							</div>
+		    				<!-- /.Peoples -->
+		    				<!-- Comments -->
+		    				<div class="comments">
+								<!-- Comment Item -->
+								<div class="media">
+									<div class="img-frame1">
+										<img class="mr-3" src="{{ url_for('static', filename='/images/profile_8.jpg')}}" alt="Zola">
+									</div>
+									<div class="media-body">
+										<div class="pin">
+											<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+												 viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+													<path d="M506.143,165.858l-160-160C342.393,2.107,337.305,0,332.001,0c-5.304,0-10.392,2.107-14.142,5.858
+														c-9.259,9.259-13.754,25.759-20.558,50.735c-7.977,29.283-18.901,69.388-38.11,88.597c-12.397,12.397-39.128,13.456-67.429,14.577
+														c-36.565,1.448-78.008,3.089-105.903,30.984c-7.811,7.811-7.811,20.474,0,28.284l90.35,90.35L5.937,477.78
+														c-7.854,7.767-7.924,20.43-0.157,28.284C9.693,510.019,14.846,512,20.001,512c5.081,0,10.165-1.925,14.063-5.78l170.429-168.551
+														l88.473,88.473c3.905,3.905,9.023,5.858,14.142,5.858c5.119,0,10.237-1.953,14.142-5.858c25.027-25.027,28.81-60.683,30.39-92.139
+														c0.554-11.032-7.939-20.424-18.971-20.978c-11.024-0.562-20.424,7.94-20.978,18.971c-0.974,19.373-2.902,35.706-7.838,48.464
+														L131.561,208.169c17.202-6.669,39.761-7.562,61.784-8.434c34.743-1.376,70.667-2.798,94.13-26.261
+														c26.725-26.725,39.264-72.757,48.42-106.368c0.995-3.653,2.097-7.7,3.229-11.699l117.47,117.47c-4,1.132-8.046,2.234-11.699,3.229
+														c-33.611,9.156-79.643,21.695-106.368,48.42c-7.811,7.811-7.811,20.474,0,28.284c7.811,7.81,20.474,7.811,28.284,0
+														c19.209-19.209,59.313-30.133,88.597-38.11c24.976-6.804,41.476-11.298,50.735-20.558c3.751-3.75,5.858-8.838,5.858-14.142
+														S509.894,169.608,506.143,165.858z"/>
+											</svg>
+										</div>
+										<h5 class="mt-0">Mia Columbuus <span>4 hours ago</span></h5>
+										<p>TGrotesque hen onto yikes where one a more trewed flustered oh much like polite far ...</p>
+										<!-- Replied -->
+										<div class="media mt-3">
+											<a href="index.html#">
+												<div class="img-frame2">
+													<img class="mr-3" src="{{ url_for('static', filename='/images/profile_9.jpg')}}" alt="Zola">
+												</div>
+											</a>
+											<div class="media-body">
+												<h5 class="mt-0">Yakie Soliz <span>7 hours ago</span></h5>
+												<p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. Praesent laoreet ...</p>
+											</div>
+										</div>
+										<!-- /.Replied -->
+									</div>
+								</div>
+								<!-- /Comment Item -->
+							</div>
+							<div class="see-all-comments">
+								<a href="index.html#">See All Comments</a>
+							</div>
+		    				<!-- /.Comments -->
+						</div>
+    					<!-- /.Contents -->
+    				</div>
+    			</div>
+    			<!-- /.Block Style 2 -->
+    			<!-- Block Style 3, 4, 5 -->
+    			<div class="col-12 col-lg-4">
+    				<div class="block-style-3">
+    					<div class="block-title-1">
+    						<h3>STAY CONNECTED</h3>
+    						<img src="{{ url_for('static', filename='/images/svg/more-1.svg')}}" alt="Zola">
+    					</div>
+    					<div class="block-content">
+    						<!-- Item -->
+							<div class="block-item">
+								<div class="block-left">
+									<div class="social">
+										<i class="fa fa-facebook"></i>
+									</div>
+									<div class="followers">
+										<div class="content">
+											<span class="count">75.820 +</span>
+											<span class="text">FANS</span>
+										</div>
+
+									</div>
+								</div>
+								<div class="block-right">
+									<div class="content">
+										<a href="index.html#">Like Page</a>
+									</div>
+								</div>
+							</div>
+    						<!-- /.Item -->
+    						<!-- Item -->
+							<div class="block-item">
+								<div class="block-left">
+									<div class="social">
+										<i class="fa fa-twitter"></i>
+									</div>
+									<div class="followers">
+										<div class="content">
+											<span class="count">27.257 +</span>
+											<span class="text">FOLLOWERS</span>
+										</div>
+
+									</div>
+								</div>
+								<div class="block-right">
+									<div class="content">
+										<a href="index.html#">Like Page</a>
+									</div>
+								</div>
+							</div>
+    						<!-- /.Item -->
+    						<!-- Item -->
+							<div class="block-item">
+								<div class="block-left">
+									<div class="social">
+										<i class="fa fa-instagram"></i>
+									</div>
+									<div class="followers">
+										<div class="content">
+											<span class="count">19.275</span>
+											<span class="text">FOLLOWERS</span>
+										</div>
+
+									</div>
+								</div>
+								<div class="block-right">
+									<div class="content">
+										<a href="index.html#">Like Page</a>
+									</div>
+								</div>
+							</div>
+    						<!-- /.Item -->
+    					</div>
+    				</div>
+    				<div class="ts-space50"></div>
+    				<div class="block-style-4">
+    					<a href="index.html#">
+    						<img class="img-fluid" src="{{ url_for('static', filename='/images/ads_01.jpg')}}" alt="Zola">
+    					</a>
+    				</div>
+    				<div class="ts-space50"></div>
+    				<div class="block-style-5">
+						<div class="block-title">
+							<h3>OUR SPONSORS</h3>
+						</div>
+						<div class="block-content">
+							<div class="block-wrapper">
+								<ul>
+									<li><a href="index.html#"><img class="img-fluid" src="{{ url_for('static', filename='/images/ads_02.jpg')}}" alt="Zola"></a></li>
+									<li><a href="index.html#"><img class="img-fluid" src="{{ url_for('static', filename='/images/ads_03.jpg')}}" alt="Zola"></a></li>
+									<li><a href="index.html#"><img class="img-fluid" src="{{ url_for('static', filename='/images/ads_04.jpg')}}" alt="Zola"></a></li>
+									<li><a href="index.html#"><img class="img-fluid" src="{{ url_for('static', filename='/images/ads_05.jpg')}}" alt="Zola"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+    			</div>
+    			<!-- /.Block Style 3, 4, 5 -->
+    		</div>
+    		<div class="row">
+    			<div class="col-12 col-lg-8">
+    				<div class="row">
+    					<!-- Block Style 7 -->
+		    			<div class="col-12">
+		    				<div class="ts-space25"></div>
+		    				<div class="block-style-7">
+		    					<a href="index.html#"><img class="img-fluid" src="{{ url_for('static', filename='/images/list_user1.jpg')}}ads_06.png" alt="Zola"></a>
+		    				</div>
+		    				<div class="ts-space95"></div>
+		    			</div>
+		    			<!-- /.Block Style 7 -->
+		    			<!-- Block Style 8 -->
+		    			<div class="col-12 col-lg-6">
+		    				<div class="block-style-8">
+		    					<!-- Block Title 2 -->
+		    					<div class="block-title-2">
+		    						<h3>TECHNOLOGY</h3>
+		    					</div>
+		    					<!-- /.Block Title 2 -->
+		    					<!-- Contents -->
+								<div class="contents">
+									<!-- Thumbnail -->
+									<div class="thumbnail-1">
+										<span class="bg-green">Technology</span>
+										<a href="index.html#">
+											<img src="{{ url_for('static', filename='/images/thumbnail_04.jpg')}}" alt="Zola">
+											<div class="overlay">
+												<div class="overlay-content">
+													<div class="list-users-02">
+									    				<ul class="images">
+									    					<li><img src="{{ url_for('static', filename='/images/profile_10.jpg')}}" alt="Zola"></li>
+									    				</ul>
+									    				<p><span>Bily Jacksom</span></p>
+								    				</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<!-- /.Thumbnail -->
+									<!-- Content Wrapper -->
+									<div class="content-wrapper">
+										<!-- Date -->
+										<div class="date">
+											<h5>5 MIN READ</h5>
+										</div>
+										<!-- /.Date -->
+										<!-- Title -->
+										<div class="title">
+											<a href="index.html#">
+												<h2>Every Time the Youngest entrep- reneurs Invest in the Stock Market</h2>
+											</a>
+										</div>
+										<!-- /.Title -->
+										<!-- Description -->
+										<div class="desc">
+											<p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. Praesent laoreet interdum diam, ac ornare dolor mattis up.</p>
+										</div>
+										<!-- /.Description -->
+									</div>
+									<!-- Content Wrapper -->
+									<!-- Small List Posts -->
+									<div class="small-list-posts">
+										<!-- Item -->
+										<div class="item">
+											<a href="index.html#">
+												<div class="thumbnail-img">
+													<img src="{{ url_for('static', filename='/images/thumbnail_05.jpg')}}" alt="Zola">
+												</div>
+												<div class="content">
+													<h3>Welcome to Akroot is a Spe- cialized Design Agency.</h3>
+													<span>5 MIN READ</span>
+												</div>
+											</a>
+										</div>
+										<!-- Item -->
+										<!-- Item -->
+										<div class="item">
+											<a href="index.html#">
+												<div class="thumbnail-img">
+													<img src="{{ url_for('static', filename='/images/thumbnail_06.jpg')}}" alt="Zola">
+												</div>
+												<div class="content">
+													<h3>Welcome to Akroot is a Spe- cialized Design Agency.</h3>
+													<span>5 MIN READ</span>
+												</div>
+											</a>
+										</div>
+										<!-- Item -->
+										<!-- Item -->
+										<div class="item">
+											<a href="index.html#">
+												<div class="thumbnail-img">
+													<img src="{{ url_for('static', filename='/images/thumbnail_07.jpg')}}" alt="Zola">
+												</div>
+												<div class="content">
+													<h3>Welcome to Akroot is a Spe- cialized Design Agency.</h3>
+													<span>5 MIN READ</span>
+												</div>
+											</a>
+										</div>
+										<!-- Item -->
+									</div>
+									<!-- /.Small List Posts -->
+								</div>
+		    					<!-- /.Contents -->
+		    				</div>
+		    			</div>
+		    			<div class="col-12 col-lg-6">
+		    				<div class="block-style-8">
+		    					<!-- Block Title 2 -->
+		    					<div class="block-title-2">
+		    						<h3>LIFE</h3>
+		    					</div>
+		    					<!-- /.Block Title 2 -->
+		    					<!-- Contents -->
+								<div class="contents">
+									<!-- Thumbnail -->
+									<div class="thumbnail-1">
+										<span class="bg-grey">Travel</span>
+										<a href="index.html#">
+											<img src="{{ url_for('static', filename='/images/thumbnail_08.jpg')}}" alt="Zola">
+											<div class="overlay">
+												<div class="overlay-content">
+													<div class="list-users-02">
+									    				<ul class="images">
+									    					<li><img src="{{ url_for('static', filename='/images/profile_11.jpg')}}" alt="Zola"></li>
+									    				</ul>
+									    				<p><span>Olby Oltraford</span></p>
+								    				</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<!-- /.Thumbnail -->
+									<!-- Content Wrapper -->
+									<div class="content-wrapper">
+										<!-- Date -->
+										<div class="date">
+											<h5>5 MIN READ</h5>
+										</div>
+										<!-- /.Date -->
+										<!-- Title -->
+										<div class="title">
+											<a href="index.html#">
+												<h2>Trends is Now Business from Ho- me through a Smart Phone</h2>
+											</a>
+										</div>
+										<!-- /.Title -->
+										<!-- Description -->
+										<div class="desc">
+											<p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. Praesent laoreet interdum diam, ac ornare dolor mattis up.</p>
+										</div>
+										<!-- /.Description -->
+									</div>
+									<!-- Content Wrapper -->
+									<!-- Small List Posts -->
+									<div class="small-list-posts">
+										<!-- Item -->
+										<div class="item">
+											<a href="index.html#">
+												<div class="thumbnail-img">
+													<img src="{{ url_for('static', filename='/images/thumbnail_09.jpg')}}" alt="Zola">
+												</div>
+												<div class="content">
+													<h3>Welcome to Akroot is a Spe- cialized Design Agency.</h3>
+													<span>5 MIN READ</span>
+												</div>
+											</a>
+										</div>
+										<!-- Item -->
+										<!-- Item -->
+										<div class="item">
+											<a href="index.html#">
+												<div class="thumbnail-img">
+													<img src="{{ url_for('static', filename='/images/thumbnail_10.jpg')}}" alt="Zola">
+												</div>
+												<div class="content">
+													<h3>Welcome to Akroot is a Spe- cialized Design Agency.</h3>
+													<span>5 MIN READ</span>
+												</div>
+											</a>
+										</div>
+										<!-- Item -->
+										<!-- Item -->
+										<div class="item">
+											<a href="index.html#">
+												<div class="thumbnail-img">
+													<img src="{{ url_for('static', filename='/images/thumbnail_11.jpg')}}" alt="Zola">
+												</div>
+												<div class="content">
+													<h3>Welcome to Akroot is a Spe- cialized Design Agency.</h3>
+													<span>5 MIN READ</span>
+												</div>
+											</a>
+										</div>
+										<!-- Item -->
+									</div>
+									<!-- /.Small List Posts -->
+								</div>
+		    					<!-- /.Contents -->
+		    				</div>
+		    			</div>
+		    			<!-- /.Block Style 8 -->
+		    		</div>
+    			</div>
+    			<div class="col-12 col-lg-4">
+    				<div class="row">
+    					<!-- Block Style 6 & 4 -->
+		    			<div class="col-12">
+			    			<div class="ts-space50"></div>
+							<div class="block-style-6">
+								<div class="block-title-1">
+									<h3>TWITTER FEED</h3>
+									<img src="{{ url_for('static', filename='/images/svg/more-1.svg')}}" alt="Zola">
+								</div>
+								<div class="tweets">
+					         		<!-- Item -->
+					         		<div class="item">
+					         			<a href="index.html#">
+						         			<div class="tweet-img">
+						         				<img src="{{ url_for('static', filename='/images/tweet-img2.png')}}" alt="Zola">
+						         			</div>
+						         			<div class="tweet-content">
+						         				<i class="fa fa-twitter"></i>
+						         				<h5>Zola News <span>@ZolaNews</span></h5>
+						         				<p>Phasellus pulvinar iaculis nunc at placerat. Sed porta sollicitudin eros, vel sagittis turpis consequat <span>envato.d.pr/h7ivMe</span></p>
+						         			</div>
+						         		</a>
+					         		</div>
+					         		<!-- /.Item -->
+					         		<!-- Item -->
+					         		<div class="item">
+					         			<a href="index.html#">
+						         			<div class="tweet-img">
+						         				<img src="{{ url_for('static', filename='/images/tweet-img2.png')}}" alt="Zola">
+						         			</div>
+						         			<div class="tweet-content">
+						         				<i class="fa fa-twitter"></i>
+						         				<h5>Zola News <span>@ZolaNews</span></h5>
+						         				<p>Phasellus pulvinar iaculis nunc at placerat. Sed porta sollicitudin eros, vel sagittis turpis consequat <span>envato.d.pr/h7ivMe</span></p>
+						         			</div>
+						         		</a>
+					         		</div>
+					         		<!-- /.Item -->
+					         		<!-- Item -->
+					         		<div class="item">
+					         			<a href="index.html#">
+						         			<div class="tweet-img">
+						         				<img src="{{ url_for('static', filename='/images/tweet-img2.png')}}" alt="Zola">
+						         			</div>
+						         			<div class="tweet-content">
+						         				<i class="fa fa-twitter"></i>
+						         				<h5>Zola News <span>@ZolaNews</span></h5>
+						         				<p>Phasellus pulvinar iaculis nunc at placerat. Sed porta sollicitudin eros, vel sagittis turpis consequat <span>envato.d.pr/h7ivMe</span></p>
+						         			</div>
+						         		</a>
+					         		</div>
+					         		<!-- /.Item -->
+					         	</div>
+							</div>
+							<div class="ts-space50"></div>
+							<div class="block-style-4">
+								<a href="index.html#">
+									<img class="img-fluid" src="{{ url_for('static', filename='/images/ads_01.jpg')}}" alt="Zola">
+								</a>
+							</div>
+							<div class="ts-space50"></div>
+						</div>
+						<!-- Block Style 6 & 4 -->
+    				</div>
+    			</div>
+    		</div>
+    		<div class="ts-space70"></div>
+    		<div class="row">
+    			<!-- Block Style 1 -->
+    			<div class="col-12 col-lg-3">
+    				<div class="block-style-1 v2">
+    					<!-- Block Title 1 -->
+    					<div class="block-title-1">
+    						<h3>EDITOR'S PICKS</h3>
+    						<img src="{{ url_for('static', filename='/images/svg/more-1.svg')}}" alt="Zola">
+    					</div>
+    					<!-- /.Block Title 1 -->
+    					<!-- Block Content -->
+    					<div class="block-content">
+    						<div class="block-content_header">
+    							<img src="{{ url_for('static', filename='/images/profile_12.jpg')}}" alt="Zola">
+    							<p>Linda Krakster</p>
+    						</div>
+    						<div class="block-content_thumbnail">
+								<a href="index.html#">
+									<img src="{{ url_for('static', filename='/images/thumbnail_12.jpg')}}" alt="Zola">
+								</a>
+    						</div>
+    						<div class="block-content_text">
+								<a href="index.html#">
+									<h4>According to the governor in the technological field, it</h4>
+								</a>
+								<p>Aliquam vehicula mollis urna vel dignissim. Integer tincipunt <a href="index.html#">continued</a></p>
+    						</div>
+    					</div>
+    					<!-- /.Block Content -->
+						<!-- Block Content -->
+    					<div class="block-content">
+    						<div class="block-content_header">
+    							<img src="{{ url_for('static', filename='/images/profile_13.jpg')}}" alt="Zola">
+    							<p>Carl Borders</p>
+    						</div>
+    						<div class="block-content_thumbnail">
+								<a href="index.html#">
+									<img src="{{ url_for('static', filename='/images/thumbnail_13.jpg')}}" alt="Zola">
+								</a>
+    						</div>
+    						<div class="block-content_text">
+								<a href="index.html#">
+									<h4>Making more sport helps creativity in business</h4>
+								</a>
+								<p>Aliquam vehicula mollis urna vel dignissim. Integer tincipunt <a href="index.html#">continued</a></p>
+    						</div>
+    					</div>
+    					<!-- /.Block Content -->
+    					<!-- Block Content -->
+    					<div class="block-content">
+    						<div class="block-content_header">
+    							<img src="{{ url_for('static', filename='/images/profile_14.jpg')}}" alt="Zola">
+    							<p>Carl Borders</p>
+    						</div>
+    						<div class="block-content_thumbnail">
+								<a href="index.html#">
+									<img src="{{ url_for('static', filename='/images/thumbnail_14.jpg')}}" alt="Zola">
+								</a>
+    						</div>
+    						<div class="block-content_text">
+								<a href="index.html#">
+									<h4>A study has shown that we spend more than 10 hours a</h4>
+								</a>
+								<p>Aliquam vehicula mollis urna vel dignissim. Integer tincipunt <a href="index.html#">continued</a></p>
+    						</div>
+    					</div>
+    					<!-- /.Block Content -->
+    				</div>
+    			</div>
+    			<!-- /.Block Style 1 -->
+    			<!-- Block Style 9 -->
+    			<div class="col-12 col-lg-5">
+    				<div class="block-style-9">
+    					<!-- Contents -->
+						<div class="contents">
+							<!-- Thumbnail -->
+							<div class="thumbnail-1">
+								<a href="index.html#">
+									<img src="{{ url_for('static', filename='/images/thumbnail_15.jpg')}}" alt="Zola">
+									<div class="overlay">
+										<div class="overlay-content">
+											<div class="list-users-02">
+							    				<ul class="images">
+							    					<li><img src="{{ url_for('static', filename='/images/profile_15.jpg')}}" alt="Zola"></li>
+							    				</ul>
+							    				<p><span>Lily Lover</span></p>
+						    				</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<!-- /.Thumbnail -->
+							<!-- Content Wrapper -->
+							<div class="content-wrapper">
+								<!-- Date -->
+								<div class="date">
+									<h5>2 MIN AGO</h5>
+								</div>
+								<!-- /.Date -->
+								<!-- Title -->
+								<div class="title">
+									<a href="index.html#">
+										<h2><span>NEW</span>Modeling has Been a Career and a new Boom in Developing Countries</h2>
+									</a>
+								</div>
+								<!-- /.Title -->
+								<!-- Description -->
+								<div class="desc">
+									<p>Vivamus dapibus et purus quis mollis. Mauris tempus tortor vel mi eleifend laoreet. Nulla laoreet sapien erat, nec vestibulum est volutpat <a href="index.html#">Read More</a></p>
+								</div>
+								<!-- /.Description -->
+							</div>
+							<!-- Content Wrapper -->
+							<!-- Share Post -->
+							<div class="share-post">
+								<div class="like">
+			    					<a href="index.html#">
+										<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+											 viewBox="0 0 481.567 481.567" style="enable-background:new 0 0 481.567 481.567;" xml:space="preserve">
+												<path d="M424.7,55.841c-19.8-15.2-43.3-25-68.1-28.2c-42.6-5.6-84.3,7.4-115.8,35.6c-31.5-28.5-73.4-41.5-116.2-35.8
+													c-24.8,3.3-48.4,13.2-68.3,28.6c-35.8,27.9-56.4,69.6-56.3,114.6c0,38.5,15.1,74.8,42.4,102.1l172.9,172.9
+													c6.6,6.6,15.2,9.8,23.8,9.8c8.6,0,17.2-3.3,23.8-9.8l26.8-26.8c7-7,7-18.4,0-25.5c-7-7-18.4-7-25.5,0l-25.1,25.1l-171.2-171.3
+													c-20.5-20.5-31.8-47.7-31.9-76.7c0-33.7,15.4-65.1,42.4-86.1c14.8-11.5,32.4-18.9,50.9-21.3c34.2-4.5,67.6,6.7,91.7,30.9
+													l19.8,19.8l19.6-19.6c24-24.1,57.4-35.3,91.5-30.8c18.5,2.4,36,9.7,50.8,21c28.2,21.7,43.8,54.4,42.8,89.6
+													c-0.8,27.7-12.9,54.6-33.9,75.7l-91.2,91.1c-7,7-7,18.4,0,25.5c7,7,18.4,7,25.5,0l91.2-91.2c27.6-27.6,43.4-63.1,44.4-100.1
+													C482.9,128.041,462.2,84.641,424.7,55.841z"/>
+										</svg>
+										349
+									</a>
+			    				</div>
+			    				<div class="share">
+			    					<a href="index.html#">
+										<svg enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+												<path d="m426 340c-26.583 0-50.387 12.124-66.174 31.131l-66.919-33.283c-9.889-4.916-21.895-0.89-26.813 9.001-4.919 9.89-0.889 21.895 9.001 26.813l67.022 33.333c-1.386 6.117-2.117 12.477-2.117 19.005 0 47.421 38.58 86 86 86s86-38.579 86-86-38.58-86-86-86zm0 132c-25.364 0-46-20.636-46-46 0-6.29 1.269-12.288 3.565-17.754 0.491-0.728 0.941-1.496 1.343-2.304 0.427-0.858 0.786-1.733 1.081-2.618 7.917-13.917 22.886-23.324 40.011-23.324 25.364 0 46 20.636 46 46s-20.636 46-46 46z"></path>
+												<path d="m426 0c-47.42 0-86 38.579-86 86 0 6.627 0.754 13.081 2.179 19.281l-190.34 95.45c-15.788-18.777-39.444-30.731-65.84-30.731-47.42 0-86 38.579-86 86s38.58 86 86 86c26.282 0 49.848-11.851 65.635-30.488l32.293 16.435c2.906 1.479 6.003 2.18 9.055 2.18 7.286 0 14.31-3.995 17.841-10.933 5.01-9.845 1.092-21.886-8.753-26.896l-32.377-16.477c1.508-6.365 2.306-13.002 2.306-19.821 0-6.709-0.772-13.241-2.233-19.511l190.24-95.401c15.788 18.882 39.512 30.912 65.992 30.912 47.42 0 86-38.579 86-86s-38.58-86-86-86zm-340 302c-25.364 0-46-20.636-46-46s20.636-46 46-46 46 20.636 46 46-20.636 46-46 46zm340-170c-25.364 0-46-20.636-46-46s20.636-46 46-46 46 20.636 46 46-20.636 46-46 46z"></path>
+										</svg>
+										151
+									</a>
+			    				</div>
+			    				<div class="comment">
+			    					<a href="index.html#">
+										<svg enable-background="new 0 0 488 488" version="1.1" viewBox="0 0 488 488" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+												<path d="m415.7 90.4c-46-40.3-106.9-62.5-171.7-62.5s-125.7 22.2-171.7 62.5c-46.6 40.9-72.3 95.4-72.3 153.6 0 45.9 16.7 90.9 47.2 127.8-6 11.7-14.2 21-24.6 27.8-8.6 5.6-12.7 15.7-10.4 25.7 2.2 9.9 10.2 17.1 20.2 18.5 20.6 2.9 60.8 4.3 98.1-18 8.5-5.1 11.3-16.2 6.2-24.7s-16.2-11.3-24.7-6.2c-15.6 9.3-32.1 13.1-46.4 14.2 8.2-9.8 14.7-21.3 19.5-34.3 2.4-6.4 0.9-13.5-3.6-18.5-29.8-32.2-45.5-71.1-45.5-112.3 0-99.3 93.3-180.1 208-180.1s208 80.8 208 180.1-93.3 180.1-208 180.1c-16.6 0-33.2-1.7-49.2-5.1-9.7-2.1-19.3 4.2-21.3 13.9-2.1 9.7 4.2 19.3 13.9 21.3 18.5 3.9 37.5 5.9 56.7 5.9 64.7 0 125.7-22.2 171.7-62.5 46.5-40.9 72.2-95.4 72.2-153.6s-25.7-112.7-72.3-153.6z"></path>
+												<circle cx="243.9" cy="244" r="23.6"></circle>
+												<circle cx="317.5" cy="244" r="23.6"></circle>
+												<circle cx="170.3" cy="244" r="23.6"></circle>
+										</svg>
+										1309
+									</a>
+			    				</div>
+			    			</div>
+							<!-- /.Share Post -->
+						</div>
+    					<!-- /.Contents -->
+    				</div>
+    				<div class="block-style-9">
+    					<!-- Contents -->
+						<div class="contents">
+							<!-- Thumbnail -->
+							<div class="thumbnail-1">
+								<a href="index.html#">
+									<img src="{{ url_for('static', filename='/images/thumbnail_16.jpg')}}" alt="Zola">
+									<div class="overlay">
+										<div class="overlay-content">
+											<div class="list-users-02">
+							    				<ul class="images">
+							    					<li><img src="{{ url_for('static', filename='/images/profile_16.jpg')}}" alt="Zola"></li>
+							    				</ul>
+							    				<p><span>Lily Lover</span></p>
+						    				</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<!-- /.Thumbnail -->
+							<!-- Content Wrapper -->
+							<div class="content-wrapper">
+								<!-- Date -->
+								<div class="date">
+									<h5>2 MIN AGO</h5>
+								</div>
+								<!-- /.Date -->
+								<!-- Title -->
+								<div class="title">
+									<a href="index.html#">
+										<h2><span>NEW</span>Modeling has Been a Career and a new Boom in Developing Countries</h2>
+									</a>
+								</div>
+								<!-- /.Title -->
+								<!-- Description -->
+								<div class="desc">
+									<p>Vivamus dapibus et purus quis mollis. Mauris tempus tortor vel mi eleifend laoreet. Nulla laoreet sapien erat, nec vestibulum est volutpat <a href="index.html#">Read More</a></p>
+								</div>
+								<!-- /.Description -->
+							</div>
+							<!-- Content Wrapper -->
+							<!-- Share Post -->
+							<div class="share-post">
+								<div class="like">
+			    					<a href="index.html#">
+										<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+											 viewBox="0 0 481.567 481.567" style="enable-background:new 0 0 481.567 481.567;" xml:space="preserve">
+												<path d="M424.7,55.841c-19.8-15.2-43.3-25-68.1-28.2c-42.6-5.6-84.3,7.4-115.8,35.6c-31.5-28.5-73.4-41.5-116.2-35.8
+													c-24.8,3.3-48.4,13.2-68.3,28.6c-35.8,27.9-56.4,69.6-56.3,114.6c0,38.5,15.1,74.8,42.4,102.1l172.9,172.9
+													c6.6,6.6,15.2,9.8,23.8,9.8c8.6,0,17.2-3.3,23.8-9.8l26.8-26.8c7-7,7-18.4,0-25.5c-7-7-18.4-7-25.5,0l-25.1,25.1l-171.2-171.3
+													c-20.5-20.5-31.8-47.7-31.9-76.7c0-33.7,15.4-65.1,42.4-86.1c14.8-11.5,32.4-18.9,50.9-21.3c34.2-4.5,67.6,6.7,91.7,30.9
+													l19.8,19.8l19.6-19.6c24-24.1,57.4-35.3,91.5-30.8c18.5,2.4,36,9.7,50.8,21c28.2,21.7,43.8,54.4,42.8,89.6
+													c-0.8,27.7-12.9,54.6-33.9,75.7l-91.2,91.1c-7,7-7,18.4,0,25.5c7,7,18.4,7,25.5,0l91.2-91.2c27.6-27.6,43.4-63.1,44.4-100.1
+													C482.9,128.041,462.2,84.641,424.7,55.841z"/>
+										</svg>
+										349
+									</a>
+			    				</div>
+			    				<div class="share">
+			    					<a href="index.html#">
+										<svg enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+												<path d="m426 340c-26.583 0-50.387 12.124-66.174 31.131l-66.919-33.283c-9.889-4.916-21.895-0.89-26.813 9.001-4.919 9.89-0.889 21.895 9.001 26.813l67.022 33.333c-1.386 6.117-2.117 12.477-2.117 19.005 0 47.421 38.58 86 86 86s86-38.579 86-86-38.58-86-86-86zm0 132c-25.364 0-46-20.636-46-46 0-6.29 1.269-12.288 3.565-17.754 0.491-0.728 0.941-1.496 1.343-2.304 0.427-0.858 0.786-1.733 1.081-2.618 7.917-13.917 22.886-23.324 40.011-23.324 25.364 0 46 20.636 46 46s-20.636 46-46 46z"></path>
+												<path d="m426 0c-47.42 0-86 38.579-86 86 0 6.627 0.754 13.081 2.179 19.281l-190.34 95.45c-15.788-18.777-39.444-30.731-65.84-30.731-47.42 0-86 38.579-86 86s38.58 86 86 86c26.282 0 49.848-11.851 65.635-30.488l32.293 16.435c2.906 1.479 6.003 2.18 9.055 2.18 7.286 0 14.31-3.995 17.841-10.933 5.01-9.845 1.092-21.886-8.753-26.896l-32.377-16.477c1.508-6.365 2.306-13.002 2.306-19.821 0-6.709-0.772-13.241-2.233-19.511l190.24-95.401c15.788 18.882 39.512 30.912 65.992 30.912 47.42 0 86-38.579 86-86s-38.58-86-86-86zm-340 302c-25.364 0-46-20.636-46-46s20.636-46 46-46 46 20.636 46 46-20.636 46-46 46zm340-170c-25.364 0-46-20.636-46-46s20.636-46 46-46 46 20.636 46 46-20.636 46-46 46z"></path>
+										</svg>
+										151
+									</a>
+			    				</div>
+			    				<div class="comment">
+			    					<a href="index.html#">
+										<svg enable-background="new 0 0 488 488" version="1.1" viewBox="0 0 488 488" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+												<path d="m415.7 90.4c-46-40.3-106.9-62.5-171.7-62.5s-125.7 22.2-171.7 62.5c-46.6 40.9-72.3 95.4-72.3 153.6 0 45.9 16.7 90.9 47.2 127.8-6 11.7-14.2 21-24.6 27.8-8.6 5.6-12.7 15.7-10.4 25.7 2.2 9.9 10.2 17.1 20.2 18.5 20.6 2.9 60.8 4.3 98.1-18 8.5-5.1 11.3-16.2 6.2-24.7s-16.2-11.3-24.7-6.2c-15.6 9.3-32.1 13.1-46.4 14.2 8.2-9.8 14.7-21.3 19.5-34.3 2.4-6.4 0.9-13.5-3.6-18.5-29.8-32.2-45.5-71.1-45.5-112.3 0-99.3 93.3-180.1 208-180.1s208 80.8 208 180.1-93.3 180.1-208 180.1c-16.6 0-33.2-1.7-49.2-5.1-9.7-2.1-19.3 4.2-21.3 13.9-2.1 9.7 4.2 19.3 13.9 21.3 18.5 3.9 37.5 5.9 56.7 5.9 64.7 0 125.7-22.2 171.7-62.5 46.5-40.9 72.2-95.4 72.2-153.6s-25.7-112.7-72.3-153.6z"></path>
+												<circle cx="243.9" cy="244" r="23.6"></circle>
+												<circle cx="317.5" cy="244" r="23.6"></circle>
+												<circle cx="170.3" cy="244" r="23.6"></circle>
+										</svg>
+										1309
+									</a>
+			    				</div>
+			    			</div>
+							<!-- /.Share Post -->
+						</div>
+    					<!-- /.Contents -->
+    				</div>
+    				<div class="block-style-9">
+    					<!-- Contents -->
+						<div class="contents">
+							<!-- Thumbnail -->
+							<div class="thumbnail-1">
+								<a href="index.html#">
+									<img src="{{ url_for('static', filename='/images/thumbnail_17.jpg')}}" alt="Zola">
+									<div class="overlay">
+										<div class="overlay-content">
+											<div class="list-users-02">
+							    				<ul class="images">
+							    					<li><img src="{{ url_for('static', filename='/images/profile_17.jpg')}}" alt="Zola"></li>
+							    				</ul>
+							    				<p><span>Lily Lover</span></p>
+						    				</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<!-- /.Thumbnail -->
+							<!-- Content Wrapper -->
+							<div class="content-wrapper">
+								<!-- Date -->
+								<div class="date">
+									<h5>2 MIN AGO</h5>
+								</div>
+								<!-- /.Date -->
+								<!-- Title -->
+								<div class="title">
+									<a href="index.html#">
+										<h2><span>NEW</span>Modeling has Been a Career and a new Boom in Developing Countries</h2>
+									</a>
+								</div>
+								<!-- /.Title -->
+								<!-- Description -->
+								<div class="desc">
+									<p>Vivamus dapibus et purus quis mollis. Mauris tempus tortor vel mi eleifend laoreet. Nulla laoreet sapien erat, nec vestibulum est volutpat <a href="index.html#">Read More</a></p>
+								</div>
+								<!-- /.Description -->
+							</div>
+							<!-- Content Wrapper -->
+							<!-- Share Post -->
+							<div class="share-post">
+								<div class="like">
+			    					<a href="index.html#">
+										<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+											 viewBox="0 0 481.567 481.567" style="enable-background:new 0 0 481.567 481.567;" xml:space="preserve">
+												<path d="M424.7,55.841c-19.8-15.2-43.3-25-68.1-28.2c-42.6-5.6-84.3,7.4-115.8,35.6c-31.5-28.5-73.4-41.5-116.2-35.8
+													c-24.8,3.3-48.4,13.2-68.3,28.6c-35.8,27.9-56.4,69.6-56.3,114.6c0,38.5,15.1,74.8,42.4,102.1l172.9,172.9
+													c6.6,6.6,15.2,9.8,23.8,9.8c8.6,0,17.2-3.3,23.8-9.8l26.8-26.8c7-7,7-18.4,0-25.5c-7-7-18.4-7-25.5,0l-25.1,25.1l-171.2-171.3
+													c-20.5-20.5-31.8-47.7-31.9-76.7c0-33.7,15.4-65.1,42.4-86.1c14.8-11.5,32.4-18.9,50.9-21.3c34.2-4.5,67.6,6.7,91.7,30.9
+													l19.8,19.8l19.6-19.6c24-24.1,57.4-35.3,91.5-30.8c18.5,2.4,36,9.7,50.8,21c28.2,21.7,43.8,54.4,42.8,89.6
+													c-0.8,27.7-12.9,54.6-33.9,75.7l-91.2,91.1c-7,7-7,18.4,0,25.5c7,7,18.4,7,25.5,0l91.2-91.2c27.6-27.6,43.4-63.1,44.4-100.1
+													C482.9,128.041,462.2,84.641,424.7,55.841z"/>
+										</svg>
+										349
+									</a>
+			    				</div>
+			    				<div class="share">
+			    					<a href="index.html#">
+										<svg enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+												<path d="m426 340c-26.583 0-50.387 12.124-66.174 31.131l-66.919-33.283c-9.889-4.916-21.895-0.89-26.813 9.001-4.919 9.89-0.889 21.895 9.001 26.813l67.022 33.333c-1.386 6.117-2.117 12.477-2.117 19.005 0 47.421 38.58 86 86 86s86-38.579 86-86-38.58-86-86-86zm0 132c-25.364 0-46-20.636-46-46 0-6.29 1.269-12.288 3.565-17.754 0.491-0.728 0.941-1.496 1.343-2.304 0.427-0.858 0.786-1.733 1.081-2.618 7.917-13.917 22.886-23.324 40.011-23.324 25.364 0 46 20.636 46 46s-20.636 46-46 46z"></path>
+												<path d="m426 0c-47.42 0-86 38.579-86 86 0 6.627 0.754 13.081 2.179 19.281l-190.34 95.45c-15.788-18.777-39.444-30.731-65.84-30.731-47.42 0-86 38.579-86 86s38.58 86 86 86c26.282 0 49.848-11.851 65.635-30.488l32.293 16.435c2.906 1.479 6.003 2.18 9.055 2.18 7.286 0 14.31-3.995 17.841-10.933 5.01-9.845 1.092-21.886-8.753-26.896l-32.377-16.477c1.508-6.365 2.306-13.002 2.306-19.821 0-6.709-0.772-13.241-2.233-19.511l190.24-95.401c15.788 18.882 39.512 30.912 65.992 30.912 47.42 0 86-38.579 86-86s-38.58-86-86-86zm-340 302c-25.364 0-46-20.636-46-46s20.636-46 46-46 46 20.636 46 46-20.636 46-46 46zm340-170c-25.364 0-46-20.636-46-46s20.636-46 46-46 46 20.636 46 46-20.636 46-46 46z"></path>
+										</svg>
+										151
+									</a>
+			    				</div>
+			    				<div class="comment">
+			    					<a href="index.html#">
+										<svg enable-background="new 0 0 488 488" version="1.1" viewBox="0 0 488 488" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+												<path d="m415.7 90.4c-46-40.3-106.9-62.5-171.7-62.5s-125.7 22.2-171.7 62.5c-46.6 40.9-72.3 95.4-72.3 153.6 0 45.9 16.7 90.9 47.2 127.8-6 11.7-14.2 21-24.6 27.8-8.6 5.6-12.7 15.7-10.4 25.7 2.2 9.9 10.2 17.1 20.2 18.5 20.6 2.9 60.8 4.3 98.1-18 8.5-5.1 11.3-16.2 6.2-24.7s-16.2-11.3-24.7-6.2c-15.6 9.3-32.1 13.1-46.4 14.2 8.2-9.8 14.7-21.3 19.5-34.3 2.4-6.4 0.9-13.5-3.6-18.5-29.8-32.2-45.5-71.1-45.5-112.3 0-99.3 93.3-180.1 208-180.1s208 80.8 208 180.1-93.3 180.1-208 180.1c-16.6 0-33.2-1.7-49.2-5.1-9.7-2.1-19.3 4.2-21.3 13.9-2.1 9.7 4.2 19.3 13.9 21.3 18.5 3.9 37.5 5.9 56.7 5.9 64.7 0 125.7-22.2 171.7-62.5 46.5-40.9 72.2-95.4 72.2-153.6s-25.7-112.7-72.3-153.6z"></path>
+												<circle cx="243.9" cy="244" r="23.6"></circle>
+												<circle cx="317.5" cy="244" r="23.6"></circle>
+												<circle cx="170.3" cy="244" r="23.6"></circle>
+										</svg>
+										1309
+									</a>
+			    				</div>
+			    			</div>
+							<!-- /.Share Post -->
+						</div>
+    					<!-- /.Contents -->
+    				</div>
+    				<div class="block-style-9">
+    					<!-- Contents -->
+						<div class="contents">
+							<!-- Thumbnail -->
+							<div class="thumbnail-1">
+								<a href="index.html#">
+									<img src="{{ url_for('static', filename='/images/thumbnail_18.jpg')}}" alt="Zola">
+									<div class="overlay">
+										<div class="overlay-content">
+											<div class="list-users-02">
+							    				<ul class="images">
+							    					<li><img src="{{ url_for('static', filename='/images/profile_18.jpg')}}" alt="Zola"></li>
+							    				</ul>
+							    				<p><span>Lily Lover</span></p>
+						    				</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<!-- /.Thumbnail -->
+							<!-- Content Wrapper -->
+							<div class="content-wrapper">
+								<!-- Date -->
+								<div class="date">
+									<h5>2 MIN AGO</h5>
+								</div>
+								<!-- /.Date -->
+								<!-- Title -->
+								<div class="title">
+									<a href="index.html#">
+										<h2><span>NEW</span>Modeling has Been a Career and a new Boom in Developing Countries</h2>
+									</a>
+								</div>
+								<!-- /.Title -->
+								<!-- Description -->
+								<div class="desc">
+									<p>Vivamus dapibus et purus quis mollis. Mauris tempus tortor vel mi eleifend laoreet. Nulla laoreet sapien erat, nec vestibulum est volutpat <a href="index.html#">Read More</a></p>
+								</div>
+								<!-- /.Description -->
+							</div>
+							<!-- Content Wrapper -->
+							<!-- Share Post -->
+							<div class="share-post">
+								<div class="like">
+			    					<a href="index.html#">
+										<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+											 viewBox="0 0 481.567 481.567" style="enable-background:new 0 0 481.567 481.567;" xml:space="preserve">
+												<path d="M424.7,55.841c-19.8-15.2-43.3-25-68.1-28.2c-42.6-5.6-84.3,7.4-115.8,35.6c-31.5-28.5-73.4-41.5-116.2-35.8
+													c-24.8,3.3-48.4,13.2-68.3,28.6c-35.8,27.9-56.4,69.6-56.3,114.6c0,38.5,15.1,74.8,42.4,102.1l172.9,172.9
+													c6.6,6.6,15.2,9.8,23.8,9.8c8.6,0,17.2-3.3,23.8-9.8l26.8-26.8c7-7,7-18.4,0-25.5c-7-7-18.4-7-25.5,0l-25.1,25.1l-171.2-171.3
+													c-20.5-20.5-31.8-47.7-31.9-76.7c0-33.7,15.4-65.1,42.4-86.1c14.8-11.5,32.4-18.9,50.9-21.3c34.2-4.5,67.6,6.7,91.7,30.9
+													l19.8,19.8l19.6-19.6c24-24.1,57.4-35.3,91.5-30.8c18.5,2.4,36,9.7,50.8,21c28.2,21.7,43.8,54.4,42.8,89.6
+													c-0.8,27.7-12.9,54.6-33.9,75.7l-91.2,91.1c-7,7-7,18.4,0,25.5c7,7,18.4,7,25.5,0l91.2-91.2c27.6-27.6,43.4-63.1,44.4-100.1
+													C482.9,128.041,462.2,84.641,424.7,55.841z"/>
+										</svg>
+										349
+									</a>
+			    				</div>
+			    				<div class="share">
+			    					<a href="index.html#">
+										<svg enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+												<path d="m426 340c-26.583 0-50.387 12.124-66.174 31.131l-66.919-33.283c-9.889-4.916-21.895-0.89-26.813 9.001-4.919 9.89-0.889 21.895 9.001 26.813l67.022 33.333c-1.386 6.117-2.117 12.477-2.117 19.005 0 47.421 38.58 86 86 86s86-38.579 86-86-38.58-86-86-86zm0 132c-25.364 0-46-20.636-46-46 0-6.29 1.269-12.288 3.565-17.754 0.491-0.728 0.941-1.496 1.343-2.304 0.427-0.858 0.786-1.733 1.081-2.618 7.917-13.917 22.886-23.324 40.011-23.324 25.364 0 46 20.636 46 46s-20.636 46-46 46z"></path>
+												<path d="m426 0c-47.42 0-86 38.579-86 86 0 6.627 0.754 13.081 2.179 19.281l-190.34 95.45c-15.788-18.777-39.444-30.731-65.84-30.731-47.42 0-86 38.579-86 86s38.58 86 86 86c26.282 0 49.848-11.851 65.635-30.488l32.293 16.435c2.906 1.479 6.003 2.18 9.055 2.18 7.286 0 14.31-3.995 17.841-10.933 5.01-9.845 1.092-21.886-8.753-26.896l-32.377-16.477c1.508-6.365 2.306-13.002 2.306-19.821 0-6.709-0.772-13.241-2.233-19.511l190.24-95.401c15.788 18.882 39.512 30.912 65.992 30.912 47.42 0 86-38.579 86-86s-38.58-86-86-86zm-340 302c-25.364 0-46-20.636-46-46s20.636-46 46-46 46 20.636 46 46-20.636 46-46 46zm340-170c-25.364 0-46-20.636-46-46s20.636-46 46-46 46 20.636 46 46-20.636 46-46 46z"></path>
+										</svg>
+										151
+									</a>
+			    				</div>
+			    				<div class="comment">
+			    					<a href="index.html#">
+										<svg enable-background="new 0 0 488 488" version="1.1" viewBox="0 0 488 488" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+												<path d="m415.7 90.4c-46-40.3-106.9-62.5-171.7-62.5s-125.7 22.2-171.7 62.5c-46.6 40.9-72.3 95.4-72.3 153.6 0 45.9 16.7 90.9 47.2 127.8-6 11.7-14.2 21-24.6 27.8-8.6 5.6-12.7 15.7-10.4 25.7 2.2 9.9 10.2 17.1 20.2 18.5 20.6 2.9 60.8 4.3 98.1-18 8.5-5.1 11.3-16.2 6.2-24.7s-16.2-11.3-24.7-6.2c-15.6 9.3-32.1 13.1-46.4 14.2 8.2-9.8 14.7-21.3 19.5-34.3 2.4-6.4 0.9-13.5-3.6-18.5-29.8-32.2-45.5-71.1-45.5-112.3 0-99.3 93.3-180.1 208-180.1s208 80.8 208 180.1-93.3 180.1-208 180.1c-16.6 0-33.2-1.7-49.2-5.1-9.7-2.1-19.3 4.2-21.3 13.9-2.1 9.7 4.2 19.3 13.9 21.3 18.5 3.9 37.5 5.9 56.7 5.9 64.7 0 125.7-22.2 171.7-62.5 46.5-40.9 72.2-95.4 72.2-153.6s-25.7-112.7-72.3-153.6z"></path>
+												<circle cx="243.9" cy="244" r="23.6"></circle>
+												<circle cx="317.5" cy="244" r="23.6"></circle>
+												<circle cx="170.3" cy="244" r="23.6"></circle>
+										</svg>
+										1309
+									</a>
+			    				</div>
+			    			</div>
+							<!-- /.Share Post -->
+						</div>
+    					<!-- /.Contents -->
+    				</div>
+    				<div class="load-more-btn">
+    					<a class="btn" href="index.html#">Load More</a>
+    				</div>
+    				<div class="ts-space30"></div>
+    			</div>
+    			<!-- /.Block Style 9 -->
+    			<!-- Block Style 10, 11 -->
+    			<div class="col-12 col-lg-4">
+    				<div class="block-style-10">
+    					<div class="block-title-1">
+							<h3>TERNDING NEWS</h3>
+							<img src="{{ url_for('static', filename='/images/svg/more-1.svg')}}" alt="Zola">
+						</div>
+    					<div class="small-list-posts">
+							<!-- Item -->
+							<div class="item">
+								<a href="index.html#">
+									<div class="thumbnail-img">
+										<img src="{{ url_for('static', filename='/images/thumbnail_19.jpg')}}" alt="Zola">
+									</div>
+									<div class="content">
+										<h3>The Canadian model has started its own technology</h3>
+										<span>5 MIN AGO</span>
+									</div>
+								</a>
+							</div>
+							<!-- Item -->
+							<!-- Item -->
+							<div class="item">
+								<a href="index.html#">
+									<div class="thumbnail-img">
+										<img src="{{ url_for('static', filename='/images/thumbnail_20.jpg')}}" alt="Zola">
+									</div>
+									<div class="content">
+										<h3>The Last Statements of the host of the most watched</h3>
+										<span>9 MIN AGO</span>
+									</div>
+								</a>
+							</div>
+							<!-- Item -->
+							<!-- Item -->
+							<div class="item">
+								<a href="index.html#">
+									<div class="thumbnail-img">
+										<img src="{{ url_for('static', filename='/images/thumbnail_21.jpg')}}" alt="Zola">
+									</div>
+									<div class="content">
+										<h3>the Favorite places to venture for travelers from all over the</h3>
+										<span>21 MIN AGO</span>
+									</div>
+								</a>
+							</div>
+							<!-- Item -->
+							<!-- Item -->
+							<div class="item">
+								<a href="index.html#">
+									<div class="thumbnail-img">
+										<img src="{{ url_for('static', filename='/images/thumbnail_22.jpg')}}" alt="Zola">
+									</div>
+									<div class="content">
+										<h3>The British singer ventures into the world of cinema and</h3>
+										<span>8 MIN AGO</span>
+									</div>
+								</a>
+							</div>
+							<!-- Item -->
+						</div>
+    				</div>
+    				<div class="ts-space50"></div>
+    				<div class="block-style-11">
+    					<div class="block-title-1">
+							<h3>RECENT COMMENTS</h3>
+							<img src="{{ url_for('static', filename='/images/svg/LIFE')}}" alt="Zola">
+						</div>
+    					<div class="recent-comments">
+			         		<!-- Item -->
+			         		<div class="item">
+			         			<a href="index.html#">
+				         			<div class="comment-img">
+				         				<img src="{{ url_for('static', filename='/images/profile_19.jpg')}}" alt="Zola">
+				         			</div>
+				         			<div class="comment-content">
+				         				<h6>45 mins ago</h6>
+				         				<h5>Dany Janssen <span>left this comment:</span></h5>
+				         				<p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. <span>@raesent</span> lao- reet interdum diam,</p>
+				         				<p class="btm">In: <strong>Phasellus pulvinar iaculis nunc at placerat sed porta sollicitudin...</strong></p>
+				         			</div>
+				         		</a>
+			         		</div>
+			         		<!-- /.Item -->
+			         		<!-- Item -->
+			         		<div class="item">
+			         			<a href="index.html#">
+				         			<div class="comment-img">
+				         				<img src="{{ url_for('static', filename='/images/profile_20.jpg')}}" alt="Zola">
+				         			</div>
+				         			<div class="comment-content">
+				         				<h6>2 hours ago</h6>
+				         				<h5>Rudy Thomphsoon <span>left this comment:</span></h5>
+				         				<p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. <span>@raesent</span> lao- reet interdum diam,</p>
+				         				<p class="btm">In: <strong>Phasellus pulvinar iaculis nunc at placerat sed porta sollicitudin...</strong></p>
+				         			</div>
+				         		</a>
+			         		</div>
+			         		<!-- /.Item -->
+			         		<!-- Item -->
+			         		<div class="item">
+			         			<a href="index.html#">
+				         			<div class="comment-img">
+				         				<img src="{{ url_for('static', filename='/images/profile_21.jpg')}}" alt="Zola">
+				         			</div>
+				         			<div class="comment-content">
+				         				<h6>10 hours ago</h6>
+				         				<h5>Michell Lypsi <span>left this comment:</span></h5>
+				         				<p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. <span>@raesent</span> lao- reet interdum diam,</p>
+				         				<p class="btm">In: <strong>Phasellus pulvinar iaculis nunc at placerat sed porta sollicitudin...</strong></p>
+				         			</div>
+				         		</a>
+			         		</div>
+			         		<!-- /.Item -->
+			         		<!-- Item -->
+			         		<div class="item">
+			         			<a href="index.html#">
+				         			<div class="comment-img">
+				         				<img src="{{ url_for('static', filename='/images/profile_22.jpg')}}" alt="Zola">
+				         			</div>
+				         			<div class="comment-content">
+				         				<h6>12 hours ago</h6>
+				         				<h5>Vinnie Boombotz <span>left this comment:</span></h5>
+				         				<p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. <span>@raesent</span> lao- reet interdum diam,</p>
+				         				<p class="btm">In: <strong>Phasellus pulvinar iaculis nunc at placerat sed porta sollicitudin...</strong></p>
+				         			</div>
+				         		</a>
+			         		</div>
+			         		<!-- /.Item -->
+			         		<!-- Item -->
+			         		<div class="item">
+			         			<a href="index.html#">
+				         			<div class="comment-img">
+				         				<img src="{{ url_for('static', filename='/images/profile_23.jpg')}}" alt="Zola">
+				         			</div>
+				         			<div class="comment-content">
+				         				<h6>15 mins ago</h6>
+				         				<h5>Mina Jokovic <span>left this comment:</span></h5>
+				         				<p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. <span>@clorper</span> lao- reet interdum diam,</p>
+				         				<p class="btm">In: <strong>Phasellus pulvinar iaculis nunc at placerat sed porta sollicitudin...</strong></p>
+				         			</div>
+				         		</a>
+			         		</div>
+			         		<!-- /.Item -->
+			         	</div>
+    				</div>
+    			</div>
+    			<!-- /.Block Style 10, 11 -->
+    		</div>
+    	</div>
+    </div>
+    <!-- /.Section Contents -->
+
+{% endblock %}

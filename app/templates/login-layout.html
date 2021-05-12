@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <meta name="author" content="Zola">-->
+<!--    <meta name="description" content="Concept Magazine News Blogs">-->
+    {% block title %}{% endblock %}
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon.png')}}">
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap.min.css')}}" type="text/css">
+    <!-- Swiper Slider -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/swiper.min.css')}}" type="text/css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/fonts/fontawesome/font-awesome.min.css')}}">
+    <!-- OWL Carousel -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/owl.theme.default.min.css')}}" type="text/css">
+    <!-- Animate -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/animate.min.css')}}" type="text/css">
+    <!-- NProgress -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/nprogress.css')}}" type="text/css">
+    <!-- Style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css')}}" type="text/css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154444946-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-154444946-1');
+    </script>
+<!--	<style type="" rel="stylesheet">-->
+<!--		.cyrl-font {-->
+<!--			font-size: 15px !important;-->
+<!--			font-family: revert !important;-->
+<!--		}-->
+<!--	</style>-->
+</head>
+<body class="bg-grey2">
+
+    <div id="section-slider" class="slider05 v3">
+		<!-- Slider Content -->
+		<div class="slider-content" style="top: 27px;">
+	    	<div class="container">
+	    		<div class="row">
+	    			<div class="col-12">
+	    				<a href="/"><img src="{{ url_for('static', filename='images/etc-logo.png') }}" alt="Zola"></a>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+	    <!-- /.Slider Content -->
+		<!-- Slider Image -->
+		<div class="slider-image">
+			<img class="img-fluid" src="{{ url_for('static', filename='images/slider6.jpg') }}" alt="Zola">
+		</div>
+		<!-- /.Slider Image -->
+    </div>
+
+    {% block body %} {% endblock %}
+
+
+    <!-- Javascript Files -->
+	<script src="{{ url_for('static', filename='/js/jquery.min.js')}}"></script>
+	<!-- Bootstrap -->
+	<script src="{{ url_for('static', filename='/js/bootstrap.min.js')}}"></script>
+	<!-- Swiper Slider -->
+	<script src="{{ url_for('static', filename='/js/swiper.min.js')}}"></script>
+	<!-- OWL Carousel -->
+	<script src="{{ url_for('static', filename='/js/owl.carousel.min.js')}}"></script>
+	<!-- Waypoint -->
+	<script src="{{ url_for('static', filename='/js/jquery.waypoints.min.js')}}"></script>
+	<!-- Easy Waypoint -->
+	<script src="{{ url_for('static', filename='/js/easy-waypoint-animate.js')}}"></script>
+	<!-- Counter -->
+	<script src="{{ url_for('static', filename='/js/jquery.countup.js')}}"></script>
+	<!-- Counter -->
+	<script src="{{ url_for('static', filename='/js/jquery.countup.js')}}"></script>
+	<!-- NProgress -->
+	<script src="{{ url_for('static', filename='/js/nprogress.js')}}"></script>
+	<!-- Ticker -->
+	<script src="{{ url_for('static', filename='/js/jquery.newsTicker.min.js')}}"></script>
+	<!-- Scripts -->
+	<script src="{{ url_for('static', filename='/js/scripts.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,793 @@
+[04-27 23:15:10] p1088 {D:\PROJECTS\python\corp-site.flask\run.py:20} INFO - Logging is set up.
+[04-27 23:15:39] p15436 {D:\PROJECTS\python\corp-site.flask\run.py:20} INFO - Logging is set up.
+[04-27 23:16:38] p15436 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 234, in index
+    return render_template('index.html', news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 111, in block "body"
+    <p>{{ news[155].desc }}</p>
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 155
+[04-27 23:17:23] p15436 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 234, in index
+    return render_template('index.html', news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 111, in block "body"
+    <p>{{ news[155].desc }}</p>
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 155
+[04-27 23:17:25] p15436 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 234, in index
+    return render_template('index.html', news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 111, in block "body"
+    <p>{{ news[155].desc }}</p>
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 155
+[04-27 23:17:33] p8972 {D:\PROJECTS\python\corp-site.flask\run.py:20} INFO - Logging is set up.
+[04-27 23:17:46] p8972 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 234, in index
+    return render_template('index.html', news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 111, in block "body"
+    <p>{{ news[155].desc }}</p>
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 155
+[04-27 23:18:59] p8972 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 234, in index
+    return render_template('index.html', news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 111, in block "body"
+    <p>{{ news[0].desc }}</p>
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 155
+[04-27 23:19:20] p14524 {D:\PROJECTS\python\corp-site.flask\run.py:20} INFO - Logging is set up.
+[04-29 13:08:37] p15072 {D:\PROJECTS\python\corp-site.flask\run.py:20} INFO - Logging is set up.
+[04-29 13:09:07] p12468 {D:\PROJECTS\python\corp-site.flask\run.py:20} INFO - Logging is set up.
+[04-29 13:09:15] p11136 {D:\PROJECTS\python\corp-site.flask\run.py:20} INFO - Logging is set up.
+[04-29 16:21:47] p752 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[04-29 16:23:00] p2768 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[04-29 16:23:04] p2768 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 234, in index
+    return render_template('index.html', news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 111, in block "body"
+    <p>{{ news[55].desc }}</p>
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 55
+[04-29 16:41:57] p2768 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 234, in index
+    return render_template('index.html', news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 111, in block "body"
+    <p>{{ news[55].desc }}</p>
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 55
+[04-29 16:58:53] p4932 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 00:11:44] p16212 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 00:12:51] p16212 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 234, in index
+    return render_template('index.html', news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 111, in block "body"
+    <p>{{ news[55].desc }}</p>
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 55
+[05-04 00:13:16] p16212 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 234, in index
+    return render_template('index.html', news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 111, in block "body"
+    <p>{{ news[0].desc }}</p>
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 55
+[05-04 00:13:17] p16212 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 234, in index
+    return render_template('index.html', news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 111, in block "body"
+    <p>{{ news[0].desc }}</p>
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 55
+[05-04 00:13:22] p16588 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 00:40:09] p5744 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 00:51:45] p16828 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 00:56:54] p17660 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:03:52] p18464 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:33:17] p17524 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:42:10] p19804 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:42:45] p9148 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:47:22] p8816 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:49:07] p17292 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:52:51] p15956 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:53:10] p20412 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:53:28] p6352 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:53:49] p1052 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:54:30] p18696 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 01:59:51] p10496 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 02:01:20] p14464 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 02:02:56] p2768 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 02:03:09] p16828 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 02:03:49] p13000 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 02:10:16] p18244 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 02:10:59] p19332 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 02:17:08] p668 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-04 02:30:02] p12668 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-07 15:36:24] p19268 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 14:58:24] p11108 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:31:27] p11108 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 235, in index
+    return render_template('index.html', user=current_user, news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 156, in block "body"
+    <img class="mr-3" src="static/images/profile/{{user.info.photo}}" alt="Zola">
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'werkzeug.local.LocalProxy object' has no attribute 'info'
+[05-08 15:32:13] p11108 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 235, in index
+    return render_template('index.html', user=current_user, news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 156, in block "body"
+    <img class="mr-3" src="static/images/profile/{{user.info.photo}}" alt="Zola">
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'werkzeug.local.LocalProxy object' has no attribute 'info'
+[05-08 15:33:10] p11720 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:34:11] p184 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:34:36] p184 {D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py:1891} ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PROJECTS\python\corp-site.flask\app\views.py", line 235, in index
+    return render_template('index.html', user=current_user, news=news, documents=docs, notifies=notifies, datetime=datetime.utcnow())
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 1, in top-level template code
+    {% extends '/layout.html' %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\layout.html", line 388, in top-level template code
+    {% block body %} {% endblock %}
+  File "D:\PROJECTS\python\corp-site.flask\app\templates\index.html", line 156, in block "body"
+    <img class="mr-3" src="/static/images/profile/{{user.info.id }}" alt="Zola">
+  File "D:\PROJECTS\python\corp-site.flask\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'werkzeug.local.LocalProxy object' has no attribute 'info'
+[05-08 15:34:54] p8064 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:34:56] p9692 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:36:13] p1252 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:36:15] p9176 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:36:52] p9072 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:36:54] p6256 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:40:55] p11496 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:40:57] p8172 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:41:43] p11276 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:41:45] p9404 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:42:15] p11552 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:42:18] p8984 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:43:01] p2412 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:43:05] p8228 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:44:00] p9636 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:44:03] p11272 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:46:32] p8048 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:46:34] p9460 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:46:58] p9576 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:47:00] p2880 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:47:29] p9008 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:47:31] p2452 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:47:53] p11988 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 15:47:55] p6444 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:02:00] p9456 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:02:02] p8880 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:04:40] p10020 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:04:42] p7096 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:05:17] p5148 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:05:19] p9640 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:07:36] p5956 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:07:38] p2404 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:08:21] p5196 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:08:23] p3308 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:08:41] p8824 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:08:43] p9396 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:11:21] p9568 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:11:23] p8704 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:11:32] p6976 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:11:34] p4504 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:11:52] p9456 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:11:54] p2304 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:12:38] p12212 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:12:41] p11592 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:12:59] p10176 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:13:02] p10636 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:39:07] p11672 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:39:09] p10600 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:43:22] p4144 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:43:24] p8628 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:44:53] p996 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:44:55] p1180 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:48:31] p12188 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 16:48:33] p9148 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:23:51] p10896 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:23:53] p1804 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:28:59] p10864 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:29:26] p9656 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:29:30] p4448 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:29:33] p2052 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:30:09] p448 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:30:11] p8820 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:32:31] p8640 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:32:33] p6524 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:32:41] p9912 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:32:48] p6460 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:37:31] p3704 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:41:46] p1576 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:42:31] p10944 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:42:34] p1840 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:42:37] p10196 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:46:48] p9632 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:47:26] p6756 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:47:32] p10172 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 17:47:34] p12268 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 18:06:55] p5116 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 18:06:57] p10716 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 18:08:13] p8368 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 18:08:15] p456 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-08 18:08:54] p7532 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 12:51:01] p11344 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 12:51:04] p5976 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 12:52:10] p11700 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 14:33:01] p6284 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 14:33:03] p11648 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 14:35:17] p11652 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 14:35:19] p4616 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 14:39:50] p1848 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 14:39:52] p5376 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 14:41:59] p1188 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 14:42:01] p9996 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:35:05] p9596 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:40:00] p10800 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:40:58] p12096 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:41:01] p10584 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:41:51] p10192 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:41:54] p2400 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:44:48] p10328 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:44:50] p10844 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:46:33] p9928 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:46:36] p1284 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:50:03] p940 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:50:06] p9312 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:53:14] p10728 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 15:53:17] p7160 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 16:53:15] p11820 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 16:53:18] p4144 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:02:24] p11340 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:02:27] p9432 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:03:58] p9788 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:04:33] p6964 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:04:36] p11120 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:08:10] p704 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:08:14] p5964 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:08:45] p8552 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:08:48] p6176 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:15:24] p7100 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:15:27] p3084 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:37:31] p11348 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:37:54] p4140 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:37:58] p8068 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-09 17:38:00] p2320 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 11:50:22] p13068 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 11:50:26] p3956 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 11:50:28] p6948 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 11:50:59] p888 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 11:51:01] p6548 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 11:51:38] p9120 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 11:51:40] p12400 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:02:43] p12828 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:02:48] p9004 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:02:50] p12144 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:03:41] p7540 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:03:46] p1472 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:05:34] p11704 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:05:42] p11040 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:05:47] p3664 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:07:21] p6960 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:07:27] p13292 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:10:26] p9876 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:10:31] p12172 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:10:35] p12240 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:11:20] p5592 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:11:24] p6780 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:12:53] p10512 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:12:57] p13260 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:17:23] p6036 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:17:27] p12808 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:21:11] p4940 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:21:13] p11868 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:22:48] p7088 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:22:51] p5308 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:24:28] p9840 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:24:30] p2716 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:25:30] p7656 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:27:05] p13160 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:27:08] p8076 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:28:06] p8260 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:28:08] p4144 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:29:25] p6308 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:29:27] p8676 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:29:58] p11040 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:30:00] p12628 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:30:02] p4772 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:30:41] p8560 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:31:06] p3604 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:31:08] p12644 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:37:00] p11356 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:37:02] p2952 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:38:07] p8408 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:38:10] p12496 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:38:12] p10668 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:39:22] p7064 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:39:24] p8572 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:41:23] p10652 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:41:26] p6260 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:41:28] p11228 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:41:57] p12984 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:44:04] p3924 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:44:06] p2808 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:44:09] p10568 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:47:49] p10712 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:47:58] p12204 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:48:02] p6708 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 12:48:04] p9244 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 21:43:27] p12752 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:11:56] p10852 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:11:58] p12648 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:12:33] p9096 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:12:36] p10016 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:12:45] p2612 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:12:47] p10144 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:13:36] p9996 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:13:38] p10620 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:14:38] p12304 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:14:40] p8984 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:19:42] p10796 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:19:49] p13108 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:19:52] p13044 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:39:17] p10856 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:39:51] p13084 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:39:53] p12328 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:41:39] p10012 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:41:42] p6820 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:41:44] p13032 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:43:27] p10516 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:44:27] p9836 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:44:32] p12616 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:47:07] p6728 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:47:09] p4248 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:49:22] p12404 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:49:28] p12852 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:57:18] p11396 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:57:20] p8288 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:58:46] p3296 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:58:48] p10092 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:59:17] p8816 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:59:24] p10612 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 22:59:53] p11616 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:00:00] p12844 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:01:12] p8340 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:01:16] p9992 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:01:21] p8088 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:04:37] p992 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:05:44] p3560 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:05:46] p12068 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:08:01] p12276 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:08:19] p12348 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:08:35] p1320 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:08:37] p12352 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:09:19] p6292 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:09:21] p6564 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:10:48] p13152 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:40:59] p8408 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:41:03] p6488 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:41:49] p12944 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:41:51] p876 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:47:52] p12724 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:48:56] p2912 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:49:02] p9796 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:49:07] p13188 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:49:49] p9408 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:49:54] p9372 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:52:01] p10552 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:52:06] p1092 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:52:11] p7972 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:53:44] p1692 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:53:50] p8156 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:56:23] p8888 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:56:42] p10724 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:56:46] p12844 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:57:04] p9664 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:57:09] p6324 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:57:48] p3316 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:57:53] p8808 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:58:38] p7052 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-10 23:58:43] p11632 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:03:25] p10212 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:03:51] p10836 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:03:55] p6904 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:04:10] p12748 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:04:15] p7224 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:07:52] p10984 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:30:11] p12732 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:30:13] p1904 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:31:23] p12128 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:31:41] p5124 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:31:43] p4308 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:35:07] p10236 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:35:57] p11036 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:35:59] p9776 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:57:02] p12156 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:57:04] p11332 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:58:56] p12456 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:58:58] p12832 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:59:14] p12504 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 00:59:16] p11792 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 01:00:31] p9308 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-11 01:00:34] p9036 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 15:45:30] p12872 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 15:45:33] p11572 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 15:48:19] p13556 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 15:48:21] p5392 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 16:03:26] p13024 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 16:03:28] p13892 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 16:12:42] p10332 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 16:12:44] p4240 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:07:25] p9728 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:07:27] p13716 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:18:13] p4468 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:18:15] p11520 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:27:45] p4764 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:27:47] p12532 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:31:07] p5012 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:31:09] p10380 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:39:00] p1472 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:40:23] p9792 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:41:05] p5536 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.
+[05-12 17:44:09] p5484 {D:\PROJECTS\python\corp-site.flask\app\__init__.py:22} INFO - Logging is set up.

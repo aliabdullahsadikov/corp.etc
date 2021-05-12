@@ -1,0 +1,460 @@
+{% extends '/layout.html' %}
+
+{% block body %}
+
+<div id="section-contents">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-12">
+					<!-- Block 15 -->
+					<div class="block-style-15">
+
+								<!--	Flash message section-->
+								{% with messages = get_flashed_messages() %}
+									{% if messages %}
+									<div class="content-wrapper" style="padding: 20px 19px 5px !important; width:100%;">
+										<div class="title" style="text-align: center;">
+											<ul class=flashes>
+												{% for message in messages %}
+										  		<li style="list-style-type:none;">{{ message }}</li>
+												{% endfor %}
+											</ul>
+										</div>
+									</div>
+									{% elif form.errors %}
+										<div class="content-wrapper" style="padding: 20px 19px 5px !important; width:100%;">
+											<div class="title" style="text-align: center;">
+												<ul class=flashes>
+													{% for key in form.errors.values() %}
+														<li style="color: #f96d00;list-style-type:none;">- {{'\n'+ key[0] }}</li>
+													{% endfor %}
+												</ul>
+											</div>
+										</div>
+									{% endif %}
+								{% endwith %}
+								<!--	end-->
+
+						<div class="content-wrapper section-one show">
+							<div class="left">
+								<div class="thumbnail-img">
+									{% if userInfo.photo %}
+									<img class="img-fluid" src="{{ url_for('static', filename='images/profile/{}'.format(userInfo.photo))}}" alt="Zola">
+									{% else %}
+									<img class="img-fluid" src="{{ url_for('static', filename='/images/user_default.png')}}" alt="Zola">
+									{% endif %}
+								</div>
+								<div class="details">
+<!--								for firstname and lastname line-->
+									<h2 class="font">{{ "Имя Фамилия" if not userInfo.firstname and not userInfo.lastname else userInfo.firstname+ ' ' +userInfo.lastname}}</h2>
+
+
+
+									<span class="font">{{ 'не указано' if not userInfo.department else userInfo.department }}</span><br>
+									- <span class="font">{{ 'не указано' if not userInfo.position else userInfo.position }}</span>
+									<div class="followers-post">
+										<div class="item" style="width:100%;">
+					    					<a href="tel:{{ userInfo.phone }}">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+  <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+  <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+</svg>
+												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.phone }} {% if not userInfo.phone_verification and userInfo.phone %} <!--<a
+														href=""><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a>--> {% elif not userInfo.phone %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>
+											</a>
+					    				</div>
+					    				<div class="item" style="width:100%;">
+					    					<a href="#">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-at" viewBox="0 0 16 16">
+  <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"/>
+</svg>
+												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.email }} {% if not userInfo.email_verification and userInfo.email %} <!--<a
+														href=""><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a>--> {% elif not userInfo.email %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>
+											</a>
+					    				</div>
+										<div class="item" style="width:100%;">  <!--FACEBOOK-->
+					    					<a href="https://www.facebook.com/{{ userInfo.facebook }}" target="_blank">
+												<i class="fa fa-facebook fa-lg" style="margin-right: 11px; margin-left: 5px;"></i>
+												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.facebook }} {% if not userInfo.email %} <a
+														href="https://www.facebook.com/{{ userInfo.facebook }}"><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.facebook %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>
+											</a>
+					    				</div>
+										<div class="item" style="width:100%;">  <!--INSTAGRAM-->
+					    					<a href="https://www.instagram.com/{{userInfo.instagram}}" target="_blank">
+												<i class="fa fa-instagram fa-lg" style="margin-right: 8px; margin-left: 3px;"></i>
+												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.instagram }} {% if not userInfo.instagram %} <a
+														href="https://www.instagram.com/{{userInfo.instagram}}"><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.instagram %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>
+											</a>
+					    				</div>
+										<div class="item" style="width:100%;">  <!--TELEGRAM-->
+					    					<a href="https://t.me/{{userInfo.telegram}}" target="_blank"><i class="fa fa-telegram fa-lg" style="margin-right: 6px; margin-left: 2px;"></i>
+												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.telegram }} {% if not userInfo.telegram %} <a
+														href="https://t.me/{{userInfo.telegram}}"><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.telegram %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>
+											</a>
+					    				</div>
+					    			</div>
+									<p class="font">Здесь размещен текст для информации о сотрудника.</p>
+								</div>
+							</div>
+							<div class="right">
+								<div class="follow-btn update-userinfo-btn">
+			    					<a class="btn font" >Обновить данные</a>
+			    				</div>
+			    				<ul class="social_links">
+					                <li><a href="https://www.facebook.com/{{ userInfo.facebook }}" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
+					                <li><a href="https://www.instagram.com/{{userInfo.instagram}}" target="_blank"><i class="fa fa-instagram fa-lg"></i></a></li>
+					                <li><a href="https://t.me/{{userInfo.telegram}}" target="_blank"><i class="fa fa-telegram fa-lg"></i></a></li>
+<!--					                <li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>-->
+					            </ul>
+							</div>
+						</div>
+						<div class="content-wrapper section-two hide">
+							<form method="POST" enctype="multipart/form-data">
+								{{ form.hidden_tag() }}
+								<div class="left">
+<!--									<div class="thumbnail-img">-->
+<!--										-->
+<!--									</div>-->
+<!--									example avatar-->
+<!--										<div class="avatar-wrapper thumbnail-img">-->
+<!--											{% if userInfo.photo %}-->
+<!--											<img class="img-fluid" src="{{ url_for('static', filename='images/{}'.format(userInfo.photo))}}" alt="Zola">-->
+<!--											{% else %}-->
+<!--											<img class="img-fluid" src="{{ url_for('static', filename='/images/user_default.png')}}" alt="Zola">-->
+<!--											{% endif %}-->
+<!--										</div>-->
+<!--										<input class="file-upload" type="file" accept="image/*"/>-->
+<!--										<div class="container">-->
+<!--											<div class="row">-->
+												<div class="avatar-wrapper thumbnail-img">
+													<label class="cabinet center-block">
+														<figure>
+															<img src="" class="gambar img-responsive thumbnail-img" style="" id="item-img-output" />
+														  	<figcaption><i class="fa fa-camera"></i></figcaption>
+														</figure>
+														{{ form.photo(class="item-img file center-block") }}
+<!--														<input type="file" class="item-img file center-block" name="file_photo"/>-->
+													</label>
+												</div>
+<!--											</div>-->
+<!--										</div>-->
+
+										<div class="modal fade" id="cropImagePop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										  <div class="modal-dialog">
+											<div class="modal-content">
+											<div class="modal-header">
+											  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											  <h4 class="modal-title" id="myModalLabel">
+												<?=multiLanguage( "Edit Foto" , "Edit Photo" )?></h4>
+											</div>
+											<div class="modal-body">
+											<div id="upload-demo" class="center-block"></div>
+									  </div>
+											 <div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												<button type="button" id="cropImageBtn" class="btn btn-primary">Crop</button>
+											  </div>
+											</div>
+										  </div>
+										</div>
+									<style>
+										label.cabinet{
+											display: block;
+											cursor: pointer;
+										}
+
+										label.cabinet input.file{
+											position: relative;
+											height: 100%;
+											width: auto;
+											opacity: 0;
+											-moz-opacity: 0;
+										  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+										  margin-top:-30px;
+										}
+
+										#upload-demo{
+											width: 250px;
+											height: 250px;
+										  	padding-bottom:25px;
+										}
+
+									</style>
+<!--									end-->
+									<div class="details">
+	<!--								Firstname Field -->
+										{%  if not form.firstname.data %}
+										{{ form.firstname(class="form-control", placeholder="Имя") }}
+										{% else %}
+										{{ form.firstname(class="form-control", placeholder="{}".format(form.firstname.data)) }}
+										{% endif %}
+										{% if form.errors.firstname %}
+										<span class="error">{{form.errors.firstname[0]}}</span>
+										{% endif %}
+	<!--								<h2 class="font">{{ "Имя Фамилия" if not userInfo.firstname and not userInfo.lastname else userInfo.firstname+ ' ' +userInfo.lastname}}</h2>-->
+
+
+	<!--								Lastname Field-->
+										{%  if not form.lastname.data %}
+										{{ form.lastname(class="form-control", placeholder="Фамилия") }}
+										{% else %}
+										{{ form.lastname(class="form-control", placeholder="{}".format(form.lastname.data)) }}
+										{% endif %}
+										{% if form.errors.lastname %}
+										<span class="error">{{form.errors.lastname[0]}}</span>
+										{% endif %}
+
+	<!--								Deportment Field -->
+										{%  if not form.department.data %}
+										{{ form.department(class="form-control", style="border: none;", placeholder="Отдел:") }}
+										{% else %}
+										{{ form.department(class="form-control", style="border: none;", placeholder="{}".format(form.department.data)) }}
+										{% endif %}
+										{% if form.errors.department %}
+										<span class="error">{{form.errors.department[0]}}</span>
+										{% endif %}
+	<!--									<span class="font">Отдел: <b>{{ 'не указано' if not userInfo.department else userInfo.department }}</b></span>-->
+
+<!--									Position Field-->
+										{%  if not form.position.data %}
+										{{ form.position(class="form-control", style="border: none;", placeholder="Должность:") }}
+										{% else %}
+										{{ form.position(class="form-control", style="border: none;", placeholder="{}".format(form.position.data)) }}
+										{% endif %}
+										{% if form.errors.position %}
+										<span class="error">{{form.errors.position[0]}}</span>
+										{% endif %}
+
+<!--									Phone Field-->
+										<div class="followers-post">
+											<div class="item" style="width:100%; display: inline-flex;">
+												<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" style="margin: 8px;" class="bi bi-phone" viewBox="0 0 16 16">
+	  <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+	  <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+	</svg>
+	<!--												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.phone }} {% if not userInfo.phone_verification and userInfo.phone %} <a-->
+	<!--														href=""><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.phone %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>-->
+												{%  if not form.phone.data %}
+												{{ form.phone(class="form-control", placeholder="99 9999999") }}
+												{% else %}
+												{{ form.phone(class="form-control", placeholder="{}".format(form.phone.data)) }}
+												{% endif %}
+												{% if form.errors.phone %}
+													<span class="error">{{form.errors.phone[0]}}</span>
+												{% endif %}
+											</div>
+											<div class="item" style="width:100%; display: inline-flex;">
+												<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" style="margin: 8px;" class="bi bi-at" viewBox="0 0 16 16">
+	  <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"/>
+	</svg>
+	<!--												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.phone }} {% if not userInfo.phone_verification and userInfo.phone %} <a-->
+	<!--														href=""><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.phone %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>-->
+												{%  if not form.email.data %}
+												{{ form.email(class="form-control font", placeholder="Электронный адрес") }}
+												{% else %}
+												{{ form.email(class="form-control font", placeholder="{}".format(form.email.data)) }}
+												{% endif %}
+												{% if form.errors.email %}
+													<span class="error">{{form.errors.email[0]}}</span>
+												{% endif %}
+											</div>
+											<div class="item" style="width:100%; display: inline-flex;">
+												<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" style="margin: 8px;"
+	 viewBox="0 0 155.139 155.139" xml:space="preserve">
+<g>
+	<path id="f_1_" style="fill:#a5a5a5;" d="M89.584,155.139V84.378h23.742l3.562-27.585H89.584V39.184
+		c0-7.984,2.208-13.425,13.67-13.425l14.595-0.006V1.08C115.325,0.752,106.661,0,96.577,0C75.52,0,61.104,12.853,61.104,36.452
+		v20.341H37.29v27.585h23.814v70.761H89.584z"/>
+</svg>
+	<!--												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.phone }} {% if not userInfo.phone_verification and userInfo.phone %} <a-->
+	<!--														href=""><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.phone %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>-->
+												{%  if not form.facebook.data %}
+												{{ form.facebook(class="form-control", placeholder="nickname") }}
+												{% else %}
+												{{ form.facebook(class="form-control", placeholder="{}".format(form.facebook.data)) }}
+												{% endif %}
+												{% if form.errors.facebook %}
+													<span class="error">{{form.errors.facebook[0]}}</span>
+												{% endif %}
+											</div>
+											<div class="item" style="width:100%; display: inline-flex;">
+												<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" enable-background="new 0 0 24 24" style="margin: 8px;" class="bi bi-telegram" viewBox="0 0 511 511.9">
+	  <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/><path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/><path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+	</svg>
+	<!--												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.phone }} {% if not userInfo.phone_verification and userInfo.phone %} <a-->
+	<!--														href=""><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.phone %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>-->
+												{%  if not form.instagram.data %}
+												{{ form.instagram(class="form-control", placeholder="nickname") }}
+												{% else %}
+												{{ form.instagram(class="form-control", placeholder="{}".format(form.instagram.data)) }}
+												{% endif %}
+												{% if form.errors.instagram %}
+													<span class="error">{{form.errors.instagram[0]}}</span>
+												{% endif %}
+											</div>
+											<div class="item" style="width:100%; display: inline-flex;">
+												<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" enable-background="new 0 0 24 24" style="margin: 8px;" class="bi bi-telegram" viewBox="0 0 24 24">
+	  <path d="m9.417 15.181-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.622-16.972.001-.001c.321-1.496-.541-2.081-1.527-1.714l-21.29 8.151c-1.453.564-1.431 1.374-.247 1.741l5.443 1.693 12.643-7.911c.595-.394 1.136-.176.691.218z"/>
+	</svg>
+	<!--												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.phone }} {% if not userInfo.phone_verification and userInfo.phone %} <a-->
+	<!--														href=""><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.phone %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>-->
+												{%  if not form.telegram.data %}
+												{{ form.telegram(class="form-control", placeholder="nickname") }}
+												{% else %}
+												{{ form.telegram(class="form-control", placeholder="{}".format(form.telegram.data)) }}
+												{% endif %}
+												{% if form.errors.telegram %}
+													<span class="error">{{form.errors.telegram[0]}}</span>
+												{% endif %}
+											</div>
+	<!--					    				<div class="item" style="width:100%;">-->
+	<!--					    					<a href="#">-->
+	<!--												-->
+	<!--												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.email }} {% if not userInfo.email_verification and userInfo.email %} <a-->
+	<!--														href=""><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.email %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>-->
+	<!--											</a>-->
+	<!--					    				</div>-->
+										</div>
+										<p class="font">Здесь размещен текст для информации о сотрудника.</p>
+									</div>
+								</div>
+								<div class="right">
+									<div class="follow-btn">
+										<button style="background: #bdbcbc; color: white; text-align: center; padding: 15px;" class="btn font" type="submit">Сохранить изменения</button>
+<!--										<a class="btn font" href="/profile">Сохранить изменения</a>-->
+									</div>
+									<ul class="social_links">
+										<li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+										<li><a href="#"><i class="fa fa-instagram fa-lg"></i></a></li>
+										<li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>
+									</ul>
+								</div>
+							</form>
+						</div>
+					</div>
+				    <!-- /.Block 15 -->
+				</div>
+				<div class="ts-space50"></div>
+    			<div class="col-12 col-lg-8">
+    				<div class="row">
+						<div class="col-12">
+<!--							<div class="block-style-14">-->
+<!--								<div class="contents">-->
+<!--									<div class="thumbnail-1">-->
+<!--										<span class="bg-orange font">Информация пользователя</span>-->
+<!--									</div>-->
+<!--									<form action="/user-info/update" method="post" enctype="multipart/form-data">-->
+<!--									<label for="firstname">Имя</label>-->
+
+<!--									<label for="lastname">Фамилия</label>-->
+
+<!--									<label for="department">Отдел</label>-->
+
+<!--									<label for="phone">Телефон номер</label>-->
+
+<!--									<label for="email">Электронный адрес</label>-->
+<!--								</form>-->
+
+<!--								</div>-->
+<!--							</div>-->
+
+					</div>
+						<div class="ts-space20"></div>
+
+						<div class="ts-space25"></div>
+		    		</div>
+	    		</div>
+    			<!-- Block Style 3, 4, 5 -->
+    			<div class="col-12 col-lg-4">
+<!--    				<div class="block-style-10">-->
+<!--    					<div class="block-title-1">-->
+<!--							<h3>TRENDING NEWS</h3>-->
+<!--							<img src="assets/images/svg/more-1.svg" alt="Zola">-->
+<!--						</div>-->
+<!--    					<div class="small-list-posts">-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							<div class="item">-->
+<!--								<a href="#">-->
+<!--									<div class="thumbnail-img">-->
+<!--										<img src="assets/images/thumbnail_19.jpg" alt="Zola">-->
+<!--									</div>-->
+<!--									<div class="content">-->
+<!--										<h3>The Canadian model has started its own technology</h3>-->
+<!--										<span>5 MIN AGO</span>-->
+<!--									</div>-->
+<!--								</a>-->
+<!--							</div>-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							<div class="item">-->
+<!--								<a href="#">-->
+<!--									<div class="thumbnail-img">-->
+<!--										<img src="assets/images/thumbnail_20.jpg" alt="Zola">-->
+<!--									</div>-->
+<!--									<div class="content">-->
+<!--										<h3>The Last Statements of the host of the most watched</h3>-->
+<!--										<span>9 MIN AGO</span>-->
+<!--									</div>-->
+<!--								</a>-->
+<!--							</div>-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							<div class="item">-->
+<!--								<a href="#">-->
+<!--									<div class="thumbnail-img">-->
+<!--										<img src="assets/images/thumbnail_21.jpg" alt="Zola">-->
+<!--									</div>-->
+<!--									<div class="content">-->
+<!--										<h3>the Favorite places to venture for travelers from all over the</h3>-->
+<!--										<span>21 MIN AGO</span>-->
+<!--									</div>-->
+<!--								</a>-->
+<!--							</div>-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							<div class="item">-->
+<!--								<a href="#">-->
+<!--									<div class="thumbnail-img">-->
+<!--										<img src="assets/images/thumbnail_22.jpg" alt="Zola">-->
+<!--									</div>-->
+<!--									<div class="content">-->
+<!--										<h3>The British singer ventures into the world of cinema and</h3>-->
+<!--										<span>8 MIN AGO</span>-->
+<!--									</div>-->
+<!--								</a>-->
+<!--							</div>-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--						</div>-->
+<!--    				</div>-->
+<!--    				<div class="ts-space50"></div>-->
+<!--    				<div class="block-style-5">-->
+<!--						<div class="block-title">-->
+<!--							<h3 class="font">ТЕГИ</h3>-->
+<!--						</div>-->
+<!--						<div class="block-content">-->
+<!--							<div class="block-wrapper">-->
+<!--								<ul>-->
+<!--									<a href="#"><li style="border: 1px solid black; padding: 6px; border-radius: 2px;">Праздочный</li></a>-->
+<!--									<a href="#"><li style="border: 1px solid black; padding: 6px; border-radius: 2px;">Заявки</li></a>-->
+<!--									<a href="#"><li style="border: 1px solid black; padding: 6px; border-radius: 2px;">Отпуска</li></a>-->
+<!--									<a href="#"><li style="border: 1px solid black; padding: 6px; border-radius: 2px;">Объяснение</li></a>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+					<div class="ts-space50"></div>
+
+					<div class="ts-space50"></div>
+<!--    				<div class="block-style-4">-->
+<!--    					<a href="#">-->
+<!--    						<img class="img-fluid" src="assets/images/ads_01.jpg" alt="Zola">-->
+<!--    					</a>-->
+<!--    				</div>-->
+    			</div>
+    			<!-- /.Block Style 3, 4, 5 -->
+    		</div>
+    	</div>
+    </div>
+
+{% endblock %}
