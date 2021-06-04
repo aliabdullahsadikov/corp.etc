@@ -98,7 +98,10 @@
 							</div>
 							<div class="right">
 								<div class="follow-btn update-userinfo-btn">
-			    					<a class="btn font" >Обновить данные</a>
+			    					<a style="margin-bottom: 12px;" class="btn font" >Обновить данные</a>
+			    				</div>
+								<div class="follow-btn update-user-btn">
+			    					<a style="background: #909090;" class="btn font" >Изменить логин и пароль</a>
 			    				</div>
 			    				<ul class="social_links">
 					                <li><a href="https://www.facebook.com/{{ userInfo.facebook }}" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
@@ -129,8 +132,12 @@
 												<div class="avatar-wrapper thumbnail-img">
 													<label class="cabinet center-block">
 														<figure>
+															{% if not form.photo.data %}
 															<img src="" class="gambar img-responsive thumbnail-img" style="" id="item-img-output" />
-														  	<figcaption><i class="fa fa-camera"></i></figcaption>
+														  	{% else %}
+															<img src="/static/images/profile/{{form.photo.data}}" class="gambar img-responsive thumbnail-img" style="" id="item-img-output" />
+															{% endif %}
+															<figcaption><i class="fa fa-camera"></i></figcaption>
 														</figure>
 														{{ form.photo(class="item-img file center-block") }}
 <!--														<input type="file" class="item-img file center-block" name="file_photo"/>-->
@@ -329,6 +336,37 @@
 										<li><a href="#"><i class="fa fa-instagram fa-lg"></i></a></li>
 										<li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>
 									</ul>
+								</div>
+							</form>
+						</div>
+						<div class="content-wrapper section-user hide">
+							<form method="POST" enctype="multipart/form-data">
+								{{ form_registration.hidden_tag() }}
+								<div class="left">
+									<div class="details">
+	<!--								Username Field -->
+										{{ form_registration.username(class="form-control", placeholder="{}".format(form_registration.username.data)) }}
+
+										{% if form_registration.errors.username %}
+										<span class="error">{{form_registration.errors.username[0]}}</span>
+										{% endif %}
+	<!--								<h2 class="font">{{ "Имя Фамилия" if not userInfo.firstname and not userInfo.lastname else userInfo.firstname+ ' ' +userInfo.lastname}}</h2>-->
+
+
+	<!--								Password Field-->
+										{{ form_registration.password(class="form-control", placeholder="Пароль") }}
+
+										{% if form_registration.errors.password %}
+										<span class="error">{{form_registration.errors.password[0]}}</span>
+										{% endif %}
+
+									</div>
+								</div>
+								<div class="right">
+									<div class="follow-btn">
+										<button style="background: #bdbcbc; color: white; text-align: center; padding: 15px;" class="btn font" type="submit">Сохранить изменения</button>
+<!--										<a class="btn font" href="/profile">Сохранить изменения</a>-->
+									</div>
 								</div>
 							</form>
 						</div>

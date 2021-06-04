@@ -1,0 +1,278 @@
+{% extends '/layout.html' %}
+
+{% block body %}
+
+<div id="section-contents">
+    	<div class="container">
+    		<div class="row">
+				<div class="col-8">
+    				<div class="block-title-2">
+						<h3 style="font-family: inherit;">СОЗДАТЬ НОВЫЙ ПОСТ</h3>
+					</div>
+    			</div>
+				<div class="col-4">
+    				<div class="block-title-2">
+						<h3 style="font-family: inherit;">ПРИМЕРНА В ПУБЛИКАЦИИ</h3>
+					</div>
+    			</div>
+    			<div class="col-12 col-lg-8">
+					<!-- Block 15 -->
+					<div class="block-style-15">
+
+						<div class="content-wrapper section-two my-post-form" style="padding: 50px 0px 50px 30px; width: 100%;">
+							<form method="POST" enctype="multipart/form-data">
+								{# form.hidden_tag() #}
+								<div class="left" style="width: 96%;">
+
+									<div class="details" style="width: 100%;">
+	<!--								Firstname Field -->
+										{%  if not form.title.data %}
+										{{ form.title(class="form-control style-input", placeholder="Заголовок") }}
+										{% else %}
+										{{ form.title(class="form-control style-input", placeholder="{}".format(form.title.data)) }}
+										{% endif %}
+										{% if form.errors.title %}
+										<span class="error">{{form.errors.title[0]}}</span>
+										{% endif %}
+
+	<!--								Lastname Field-->
+										{%  if not form.desc.data %}
+										{{ form.desc(class="form-control style-input", placeholder="Описание") }}
+										{% else %}
+										{{ form.desc(class="form-control style-input", placeholder="{}".format(form.desc.data)) }}
+										{% endif %}
+										{% if form.errors.desc %}
+										<span class="error">{{form.errors.desc[0]}}</span>
+										{% endif %}
+
+	<!--								Deportment Field -->
+										{%  if not form.content.data %}
+										{{ form.content(class="form-control style-input", style="border: none;", placeholder="Содержание") }}
+										{% else %}
+										{{ form.content(class="form-control style-input", style="border: none;", placeholder="{}".format(form.content.data)) }}
+										{% endif %}
+										{% if form.errors.content %}
+										<span class="error">{{form.errors.content[0]}}</span>
+										{% endif %}
+
+										<!-- Deportment Field -->
+										{%  if not form.image.data %}
+										{{ form.image(class="form-control", style="border: none;", placeholder="Фото поста") }}
+										{% else %}
+										{{ form.image(class="form-control", style="border: none;", placeholder="{}".format(form.image.data)) }}
+										{% endif %}
+										{% if form.errors.image %}
+										<span class="error">{{form.errors.image[0]}}</span>
+										{% endif %}
+<!--										<p class="font">Здесь размещен текст для информации о сотрудника.</p>-->
+										<div class="follow-btn" style="margin: 30px 0;">
+											<button style="background: #bdbcbc; color: white; text-align: center; padding: 15px;" class="btn font" type="submit">Сохранить изменения</button>
+	<!--										<a class="btn font" href="/profile">Сохранить изменения</a>-->
+										</div>
+									</div>
+
+								</div>
+<!--								<div class="right">-->
+<!--									<div class="follow-btn">-->
+<!--										<button style="background: #bdbcbc; color: white; text-align: center; padding: 15px;" class="btn font" type="submit">Сохранить изменения</button>-->
+<!--&lt;!&ndash;										<a class="btn font" href="/profile">Сохранить изменения</a>&ndash;&gt;-->
+<!--									</div>-->
+<!--									<ul class="social_links">-->
+<!--&lt;!&ndash;										<li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<li><a href="#"><i class="fa fa-instagram fa-lg"></i></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;										<li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>&ndash;&gt;-->
+<!--									</ul>-->
+<!--								</div>-->
+							</form>
+						</div>
+</div>
+				    <!-- /.Block 15 -->
+				</div>
+				<div class="col-12 col-lg-4">
+	    			<div class="block-style-12">
+						<!-- Contents -->
+						<div class="contents">
+							<!-- Thumbnail -->
+							<div class="thumbnail-1">
+								<span class="bg-purple">Travel</span>
+								<a href="homepage-04.html#">
+<!--									<img src="/static/images/post/{{'dd'}}" alt="Zola">-->
+									<img src="/static/images/thumbnail_50.jpg" alt="Zola">
+								</a>
+							</div>
+							<!-- /.Thumbnail -->
+							<!-- Content Wrapper -->
+							<div class="content-wrapper">
+								<!-- line -->
+								<div class="line">
+								</div>
+								<!-- /.line -->
+								<!-- Title -->
+								<div class="title">
+									<a href="homepage-04.html#">
+										<h2>Magical places to Visit and Ven- ture to know</h2>
+									</a>
+								</div>
+								<!-- /.Title -->
+								<!-- Description -->
+								<div class="desc">
+									<p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. Praesent laoreet interdum diam, ac ornare dolor mattis up.</p>
+								</div>
+								<!-- /.Description -->
+							</div>
+							<!-- Content Wrapper -->
+							<!-- Peoples -->
+							<div class="peoples">
+								<div class="list-users-04">
+				    				<ul class="images">
+				    					<li><img src="/static/images/profile_25.jpg" alt="Zola"></li>
+				    				</ul>
+				    				<p>Linda Tithoms</p>
+			    				</div>
+							</div>
+		    				<!-- /.Peoples -->
+						</div>
+						<!-- /.Contents -->
+					</div>
+				</div>
+				<div class="ts-space50"></div>
+<!--    			<div class="col-12 col-lg-8">-->
+<!--    				<div class="row">-->
+<!--						<div class="col-12">-->
+<!--                            <div class="block-style-14">-->
+<!--&lt;!&ndash;								<div class="contents">&ndash;&gt;-->
+<!--&lt;!&ndash;									<div class="thumbnail-1">&ndash;&gt;-->
+<!--&lt;!&ndash;										<span class="bg-orange font">Информация пользователя</span>&ndash;&gt;-->
+<!--&lt;!&ndash;									</div>&ndash;&gt;-->
+<!--&lt;!&ndash;									<form action="/user-info/update" method="post" enctype="multipart/form-data">&ndash;&gt;-->
+<!--&lt;!&ndash;									<label for="firstname">Имя</label>&ndash;&gt;-->
+
+<!--&lt;!&ndash;									<label for="lastname">Фамилия</label>&ndash;&gt;-->
+
+<!--&lt;!&ndash;									<label for="department">Отдел</label>&ndash;&gt;-->
+
+<!--&lt;!&ndash;									<label for="phone">Телефон номер</label>&ndash;&gt;-->
+
+<!--&lt;!&ndash;									<label for="email">Электронный адрес</label>&ndash;&gt;-->
+<!--&lt;!&ndash;								</form>&ndash;&gt;-->
+
+<!--&lt;!&ndash;								</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+
+<!--					</div>-->
+<!--						<div class="ts-space20"></div>-->
+
+<!--						<div class="ts-space25"></div>-->
+<!--		    		</div>-->
+<!--	    		</div>-->
+<!--    			&lt;!&ndash; Block Style 3, 4, 5 &ndash;&gt;-->
+<!--    			<div class="col-12 col-lg-4">-->
+<!--&lt;!&ndash;    				<div class="block-style-10">&ndash;&gt;-->
+<!--&lt;!&ndash;    					<div class="block-title-1">&ndash;&gt;-->
+<!--&lt;!&ndash;							<h3>TRENDING NEWS</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;							<img src="assets/images/svg/more-1.svg" alt="Zola">&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;    					<div class="small-list-posts">&ndash;&gt;-->
+<!--&lt;!&ndash;							&lt;!&ndash; Item &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;								<a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;									<div class="thumbnail-img">&ndash;&gt;-->
+<!--&lt;!&ndash;										<img src="assets/images/thumbnail_19.jpg" alt="Zola">&ndash;&gt;-->
+<!--&lt;!&ndash;									</div>&ndash;&gt;-->
+<!--&lt;!&ndash;									<div class="content">&ndash;&gt;-->
+<!--&lt;!&ndash;										<h3>The Canadian model has started its own technology</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;										<span>5 MIN AGO</span>&ndash;&gt;-->
+<!--&lt;!&ndash;									</div>&ndash;&gt;-->
+<!--&lt;!&ndash;								</a>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							&lt;!&ndash; Item &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;							&lt;!&ndash; Item &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;								<a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;									<div class="thumbnail-img">&ndash;&gt;-->
+<!--&lt;!&ndash;										<img src="assets/images/thumbnail_20.jpg" alt="Zola">&ndash;&gt;-->
+<!--&lt;!&ndash;									</div>&ndash;&gt;-->
+<!--&lt;!&ndash;									<div class="content">&ndash;&gt;-->
+<!--&lt;!&ndash;										<h3>The Last Statements of the host of the most watched</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;										<span>9 MIN AGO</span>&ndash;&gt;-->
+<!--&lt;!&ndash;									</div>&ndash;&gt;-->
+<!--&lt;!&ndash;								</a>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							&lt;!&ndash; Item &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;							&lt;!&ndash; Item &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;								<a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;									<div class="thumbnail-img">&ndash;&gt;-->
+<!--&lt;!&ndash;										<img src="assets/images/thumbnail_21.jpg" alt="Zola">&ndash;&gt;-->
+<!--&lt;!&ndash;									</div>&ndash;&gt;-->
+<!--&lt;!&ndash;									<div class="content">&ndash;&gt;-->
+<!--&lt;!&ndash;										<h3>the Favorite places to venture for travelers from all over the</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;										<span>21 MIN AGO</span>&ndash;&gt;-->
+<!--&lt;!&ndash;									</div>&ndash;&gt;-->
+<!--&lt;!&ndash;								</a>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							&lt;!&ndash; Item &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;							&lt;!&ndash; Item &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="item">&ndash;&gt;-->
+<!--&lt;!&ndash;								<a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;									<div class="thumbnail-img">&ndash;&gt;-->
+<!--&lt;!&ndash;										<img src="assets/images/thumbnail_22.jpg" alt="Zola">&ndash;&gt;-->
+<!--&lt;!&ndash;									</div>&ndash;&gt;-->
+<!--&lt;!&ndash;									<div class="content">&ndash;&gt;-->
+<!--&lt;!&ndash;										<h3>The British singer ventures into the world of cinema and</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;										<span>8 MIN AGO</span>&ndash;&gt;-->
+<!--&lt;!&ndash;									</div>&ndash;&gt;-->
+<!--&lt;!&ndash;								</a>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							&lt;!&ndash; Item &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;    				</div>&ndash;&gt;-->
+<!--&lt;!&ndash;    				<div class="ts-space50"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;    				<div class="block-style-5">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="block-title">&ndash;&gt;-->
+<!--&lt;!&ndash;							<h3 class="font">ТЕГИ</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="block-content">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="block-wrapper">&ndash;&gt;-->
+<!--&lt;!&ndash;								<ul>&ndash;&gt;-->
+<!--&lt;!&ndash;									<a href="#"><li style="border: 1px solid black; padding: 6px; border-radius: 2px;">Праздочный</li></a>&ndash;&gt;-->
+<!--&lt;!&ndash;									<a href="#"><li style="border: 1px solid black; padding: 6px; border-radius: 2px;">Заявки</li></a>&ndash;&gt;-->
+<!--&lt;!&ndash;									<a href="#"><li style="border: 1px solid black; padding: 6px; border-radius: 2px;">Отпуска</li></a>&ndash;&gt;-->
+<!--&lt;!&ndash;									<a href="#"><li style="border: 1px solid black; padding: 6px; border-radius: 2px;">Объяснение</li></a>&ndash;&gt;-->
+<!--&lt;!&ndash;								</ul>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;					</div>&ndash;&gt;-->
+<!--					<div class="ts-space50"></div>-->
+
+<!--					<div class="ts-space50"></div>-->
+<!--&lt;!&ndash;    				<div class="block-style-4">&ndash;&gt;-->
+<!--&lt;!&ndash;    					<a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;    						<img class="img-fluid" src="assets/images/ads_01.jpg" alt="Zola">&ndash;&gt;-->
+<!--&lt;!&ndash;    					</a>&ndash;&gt;-->
+<!--&lt;!&ndash;    				</div>&ndash;&gt;-->
+<!--    			</div>-->
+<!--    			&lt;!&ndash; /.Block Style 3, 4, 5 &ndash;&gt;-->
+<!--    		</div>-->
+    	</div>	<!--FOR CKEditor-->
+
+    </div>
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+
+<script type="text/javascript">
+    document.getElementById("body").classList.remove("ckeditor");
+    CKEDITOR.replace( "body", {
+        language: "",
+        height: 0,
+        width: 0,
+        codeSnippet_theme: "monokai_sublime",
+        imageUploadUrl: "",
+        filebrowserUploadUrl: "",
+        filebrowserBrowseUrl: "",
+        extraPlugins: "",
+         // CSRF token header for XHR request
+
+    });
+</script>
+{% endblock %}

@@ -35,9 +35,7 @@
 <!--</div>-->
 <!-- /.Peoples -->
 <!-- Comments -->
-<div class="see-all-comments">
-    <a href="/news/{{news[0].id }}">See All Comments</a>
-</div>
+
 <div class="comments">
     {% if user.is_authenticated %}
     <div class="media">
@@ -45,10 +43,10 @@
             <img class="mr-3" src="/static/images/profile/{{ user.info.photo }}" alt="Zola">
         </div>
         <div class="media-body" style="margin: 0 0 20px 2px;">
-            <form action="/comment" id="comment_form" name="comment" method="post">
-                <input type="hidden" name="news_id" id="news_id" value="{{ news[0].id }}">
-                <input type="hidden" name="parent_id" id="parent_id" value="0">
-                <input type="text" name="message" id="message" placeholder="Оставить комментарий" style="width: 87%; background: #fbfbfb; border-bottom: 1px solid #eeeeee !important; line-height: 2;">
+            <form class="comment_form" name="comment" method="post">
+                <input type="hidden" name="news_id" class="news_id" value="{{ news[0].id }}">
+                <input type="hidden" name="parent_id" class="parent_id" value="0">
+                <input type="text" name="message" class="message" placeholder="Оставить комментарий" style="width: 87%; background: #fbfbfb; border-bottom: 1px solid #eeeeee !important; line-height: 2;">
                 <input type="submit" name="submit" style="border-radius: 50%; width:30px; height:30px; cursor:pointer; color: white;" class="bg-orange font" value=">">
             </form>
         </div>
@@ -63,13 +61,15 @@
     <!-- Comment Items -->
     <div class="comment-items">
         <!-- Comment Item -->
+        {% set ns = namespace(count = 0) %}
         {% for comment in news[0].comments %}
 
-        <div class="media" id="comment-item">
-            <div class="img-frame1">
-                <img class="mr-3" src="/static/images/profile/{{ comment.get_user().photo }}" alt="Zola">
-            </div>
-            <div class="media-body">
+            {% if comment.parent_id == 0 and ns.count <= 2 %}
+                <div class="media" id="comment-item">
+                    <div class="img-frame1">
+                        <img class="mr-3" src="/static/images/profile/{{ comment.get_user().photo }}" alt="Zola">
+                    </div>
+                    <div class="media-body">
                 <div class="pin">
                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
@@ -99,29 +99,31 @@
                       <path d="M8.864 15.674c-.956.24-1.843-.484-1.908-1.42-.072-1.05-.23-2.015-.428-2.59-.125-.36-.479-1.012-1.04-1.638-.557-.624-1.282-1.179-2.131-1.41C2.685 8.432 2 7.85 2 7V3c0-.845.682-1.464 1.448-1.546 1.07-.113 1.564-.415 2.068-.723l.048-.029c.272-.166.578-.349.97-.484C6.931.08 7.395 0 8 0h3.5c.937 0 1.599.478 1.934 1.064.164.287.254.607.254.913 0 .152-.023.312-.077.464.201.262.38.577.488.9.11.33.172.762.004 1.15.069.13.12.268.159.403.077.27.113.567.113.856 0 .289-.036.586-.113.856-.035.12-.08.244-.138.363.394.571.418 1.2.234 1.733-.206.592-.682 1.1-1.2 1.272-.847.283-1.803.276-2.516.211a9.877 9.877 0 0 1-.443-.05 9.364 9.364 0 0 1-.062 4.51c-.138.508-.55.848-1.012.964l-.261.065zM11.5 1H8c-.51 0-.863.068-1.14.163-.281.097-.506.229-.776.393l-.04.025c-.555.338-1.198.73-2.49.868-.333.035-.554.29-.554.55V7c0 .255.226.543.62.65 1.095.3 1.977.997 2.614 1.709.635.71 1.064 1.475 1.238 1.977.243.7.407 1.768.482 2.85.025.362.36.595.667.518l.262-.065c.16-.04.258-.144.288-.255a8.34 8.34 0 0 0-.145-4.726.5.5 0 0 1 .595-.643h.003l.014.004.058.013a8.912 8.912 0 0 0 1.036.157c.663.06 1.457.054 2.11-.163.175-.059.45-.301.57-.651.107-.308.087-.67-.266-1.021L12.793 7l.353-.354c.043-.042.105-.14.154-.315.048-.167.075-.37.075-.581 0-.211-.027-.414-.075-.581-.05-.174-.111-.273-.154-.315l-.353-.354.353-.354c.047-.047.109-.176.005-.488a2.224 2.224 0 0 0-.505-.804l-.353-.354.353-.354c.006-.005.041-.05.041-.17a.866.866 0 0 0-.121-.415C12.4 1.272 12.063 1 11.5 1z"/>
                     </svg>
                 </div>
-                <span style="cursor:pointer;" class="comment-answer" data-user-photo="{{user.info.photo}}" id="{{ comment.id }}" data-news-id="{{ comment.news_id }}" >Ответить</span>
+                <span style="cursor:pointer;" class="comment-answer" data-user-photo="{{ user.info.photo if user.is_authenticated else 'False' }}" id="{{ comment.id }}" data-news-id="{{ comment.news_id }}" >Ответить</span>
 
 <!--                </p>-->
                 <!-- Replied -->
-
+                {% for ch_comment in comment.childs(2) %}
                 <div class="media" style="border-top:none;">
 <!--                form for answer-->
 
 <!--                end form-->
                     <a href="index.html#">
                         <div class="img-frame2">
-                            <img class="mr-3" src="static/images/profile_9.jpg" alt="Zola">
+                            <img class="mr-3" src="/static/images/profile/{{ ch_comment.get_user().photo }}" alt="Zola">
                         </div>
                     </a>
                     <div class="media-body">
-                        <h5 class="mt-0">Yakie Soliz <span>7 hours ago</span></h5>
-                        <p>Etiam eget erat accumsan, tempus purus a, sagittis nisi. Praesent laoreet ...</p>
+                        <h5 class="mt-0">{{ ch_comment.get_user().get_full_name() }} <span>{{ ch_comment.get_time() }}</span></h5>
+                        <p>{{ ch_comment.message }} ...</p>
                     </div>
                 </div>
+                {% endfor %}
                 <!-- /.Replied -->
             </div>
-        </div>
-
+                </div>
+            {% endif %}
+        {% set ns.count = ns.count + 1 %}
         {% endfor %}
 
         <!-- /Comment Item -->
@@ -130,3 +132,6 @@
 
 </div>
 <!-- /.Comments -->
+<div class="see-all-comments">
+    <a href="/news/{{news[0].id }}">See All Comments</a>
+</div>

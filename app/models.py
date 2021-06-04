@@ -214,12 +214,22 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     news_id = db.Column(db.Integer, db.ForeignKey('news.id'), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
     parent_id = db.Column(db.Integer, nullable=False)
     message = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def __repr__(self):
         return f"Comment('{self.user_id}', '{self.news_id}', '{self.message}', '{self.created_at}')"
+
+
+    def childs(self, count=None):
+        if count:
+            childs = Comment.query.filter_by(parent_id=self.id).limit(count).all()
+        else:
+            childs = Comment.query.filter_by(parent_id=self.id).all()
+        return childs
+
 
     def get_user(self):
         user = User.query.filter_by(id=self.user_id).one()
@@ -314,6 +324,30 @@ class DocView(MyModelView):
     }
 
 
+class Posts(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    title = db.Column(db.String(200), nullable=False)
+    slug = db.Column(db.String(200), unique=True, nullable=False)
+    desc = db.Column(db.String(250), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    image = db.Column(db.String(100), default='default-news.jpg', nullable=True)
+    isActive = db.Column(db.Boolean, default=True)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    comments = db.relationship('Comment', backref='posts', lazy=True)
+
+    def __repr__(self):
+        return f"Статьи('{self.title}', '{self.slug}', '{self.desc}', '{self.image}', '{self.created_at}')"
+
+    DEFAULT_IMAGE = 'post_default.jpg'
+
+    def create(self, form_data):
+
+        print(form_data)
+        pass
+
+
 # ADMIN PANEL
 admin = Admin(app, name='microblog', template_mode='bootstrap3')
 admin.add_view(MyModelView(User, db.session))
@@ -321,6 +355,9 @@ admin.add_view(MyModelView(Userinfo, db.session))
 admin.add_view(NewsView(News, db.session))
 admin.add_view(MyModelView(Notification, db.session))
 admin.add_view(DocView(Doc, db.session))
+
+
+
 
 
 # db.create_all()

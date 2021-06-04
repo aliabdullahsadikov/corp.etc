@@ -6,7 +6,13 @@
         $('.section-two').removeClass('hide').addClass('show');
     });
 
-    // for search input, when input will chang this function will execute
+    $('.update-user-btn a').on('click', function(e){
+        e.preventDefault();
+        $('.section-one').addClass('hide').removeClass('show');
+        $('.section-user').removeClass('hide').addClass('show');
+    });
+
+    // for search input, when user will chang input value, then function will execute
     $('form #search').on('change', function(){
         var val = $(this).val();
 //        console.log(val);
@@ -311,20 +317,23 @@
 
 
     // Comment form scripts
-    $('#comment_form').submit(handleSubmit);
+    $('.comment_form').submit(handleSubmit);
 
     function handleSubmit(e){
+
         var form = $(this);
         var data = {
-            "news_id" : form.find('#news_id').val(),
-            "parent_id" : form.find('#parent_id').val(),
-            "message" : form.find('#message').val()
+            "news_id" : form.find('.news_id').val(),
+            "parent_id" : form.find('.parent_id').val(),
+            "message" : form.find('.message').val()
         }
 
         postComment(data);
-
+        e.preventDefault();
         return false;
     }
+
+    $('form').on('click', "input[type=submit]", handleSubmit);
 
     function postComment(data){
 //    console.log(data);
@@ -349,7 +358,7 @@
     }
 
     function addToComment(data){
-//        $('#')
+        console.log(data);
     }
 
     // comment answer:
@@ -358,22 +367,35 @@
             parent_id = $(this).attr('id');
             user_photo = $(this).data('user-photo');
         checking = $('#replay-answer-'+parent_id).length;
-        if($('#replay-answer-'+parent_id).length == 0){
-            var form = '';
-            form += '<div class="media" style="border-top:none;" id="replay-answer-'+ parent_id +'">';
-            form +=    '<div class="img-frame1">';
-            form +=         '<img class="mr-3" src="/static/images/profile/'+ user_photo +'" alt="Zola">';
-            form +=     '</div>';
-            form +=     '<div class="media-body" style="margin: 0 0 20px 2px;">';
-            form +=         '<form action="/comment" id="comment_form" name="comment" method="post">';
-            form +=             '<input type="hidden" name="news_id" id="news_id" value="'+ news_id +'">';
-            form +=             '<input type="hidden" name="parent_id" id="parent_id" value="'+ parent_id +'">';
-            form +=             '<input type="text" name="message" id="message" placeholder="Оставить комментарий" style="width: 87%; background: #fbfbfb; border-bottom: 1px solid #eeeeee !important; line-height: 2;">';
-            form +=             '<input type="submit" name="submit" style="border-radius: 50%; width:30px; height:30px; cursor:pointer; color: white;" class="bg-orange font" value=">">';
-            form +=         '</form>';
-            form +=     '</div>';
-            form += '</div>';
+        console.log(user_photo);
+        if(user_photo != 'False'){
+            if($('#replay-answer-'+parent_id).length == 0){
+                var form = '';
+                form += '<div class="media" style="border-top:none;" id="replay-answer-'+ parent_id +'">';
+                form +=    '<div class="img-frame1">';
+                form +=         '<img class="mr-3" src="/static/images/profile/'+ user_photo +'" alt="Zola">';
+                form +=     '</div>';
+                form +=     '<div class="media-body" style="margin: 0 0 20px 2px;">';
+                form +=         '<form class="comment_form" name="comment" method="post">';
+                form +=             '<input type="hidden" name="news_id" class="news_id" value="'+ news_id +'">';
+                form +=             '<input type="hidden" name="parent_id" class="parent_id" value="'+ parent_id +'">';
+                form +=             '<input type="text" name="message" class="message" placeholder="Оставить комментарий" style="width: 87%; background: #fbfbfb; border-bottom: 1px solid #eeeeee !important; line-height: 2;">';
+                form +=             '<input type="submit" class="bg-orange font submit-answer-input" name="submit" style="border-radius: 50%; width:30px; height:30px; cursor:pointer; color: white;" value=">">';
+                form +=         '</form>';
+                form +=     '</div>';
+                form += '</div>';
+            }
+        }else{
+            if($('#replay-answer-'+parent_id).length == 0){
+                var form = '';
+                form += '<div class="media" style="border-top:none;" id="replay-answer-'+ parent_id +'">';
+                form +=    '<div class="media-body" style="margin: 0 0 20px 2px;">';
+                form +=         '<a href="/login" style="color: #e53a24">Авторизуйтесь, </a>если хотите оставить комментарий';
+                form +=     '</div>';
+                form += '</div>';
+            }
         }
+
 
         $(this).after(form);
 //        console.log(user_photo);

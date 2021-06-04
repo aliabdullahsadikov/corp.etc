@@ -1,0 +1,174 @@
+<div class="block-style-14">
+								<div class="contents">
+									<div class="contact-form">
+										<!-- Form -->
+										<form method="POST">
+											{{ form.hidden_tag() }}
+											<div class="row">
+												<div class="form-group col-12">
+
+													{{ form.firstname(class="form-control", placeholder="Имя") }}
+													{% if form.errors.firstname %}
+		<!--												{% for error in form.errors %}-->
+															<span class="error">{{form.errors.firstname[0]}}</span>
+		<!--												{% endfor %}-->
+													{% endif %}
+		<!--											<input type="text" class="form-control" name="name" placeholder="Name" required="">-->
+												</div>
+												<div class="form-group col-12">
+													{{ form.lastname(class="form-control", placeholder="Фамилия") }}
+													{% if form.errors.lastname %}
+		<!--												{% for error in form.errors %}-->
+															<span class="error">{{form.errors.lastname[0]}}</span>
+		<!--												{% endfor %}-->
+													{% endif %}
+		<!--											<input type="email" class="form-control" name="email" placeholder="Email" required="">-->
+												</div>
+												<div class="form-group col-12">
+													{{ form.department(class="form-control", placeholder="Отдел") }}
+													{% if form.errors.department %}
+														<span class="error">{{form.errors.department[0]}}</span>
+													{% endif %}
+		<!--											<input type="password" class="form-control" name="password" placeholder="Password" required="">-->
+												</div>
+												<div class="form-group col-12">
+													{{ form.phone(class="form-control", placeholder="Телефон номер") }}
+													{% if form.errors.phone %}
+														<span class="error">{{form.errors.phone[0]}}</span>
+													{% endif %}
+		<!--											<input type="password" class="form-control" name="password" placeholder="Password" required="">-->
+												</div>
+												<div class="form-group col-12">
+													{{ form.email(class="form-control", placeholder="Электронный адрес") }}
+													{% if form.errors.email %}
+														<span class="error">{{form.errors.email[0]}}</span>
+													{% endif %}
+		<!--											<input type="password" class="form-control" name="password" placeholder="Password" required="">-->
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group col-md-12">
+		<!--											{{ form.submit() }}-->
+													<button type="submit" id="submit" style="font-family: revert;">Обновлять</button>
+
+<!--													<a class="login-with" href="#" style="font-family: revert;">Доступ через Google</a>-->
+		<!--											<p class="tnc">By creating an account, you agree to our <br> <a href="#">Terms of Service</a> and our <a href="#">Privacy Policy.</a></p>-->
+												</div>
+											</div>
+										</form>
+										<!-- /.Form -->
+									</div>
+
+							</div>
+    					</div>
+
+
+
+
+
+
+
+
+
+
+<div class="content-wrapper section-two hide">
+							<form method="POST" enctype="multipart/form-data">
+								{{ form.hidden_tag() }}
+								<div class="left">
+									<div class="thumbnail-img">
+										{% if userInfo.photo %}
+										<img class="img-fluid" src="{{ url_for('static', filename='{}'.format(userInfo.photo.data))}}" alt="Zola">
+										{% else %}
+										<img class="img-fluid" src="{{ url_for('static', filename='/images/user_default.jpg')}}" alt="Zola">
+										{% endif %}
+									</div>
+									<div class="details">
+	<!--								Firstname Field -->
+										{%  if not userInfo.firstname %}
+										{{ form.firstname(class="form-control", placeholder="Имя") }}
+										{% else %}
+										{{ form.firstname(class="form-control", placeholder="{}".format(userInfo.firstname)) }}
+										{% endif %}
+										{% if form.errors.firstname %}
+										<span class="error">{{form.errors.firstname[0]}}</span>
+										{% endif %}
+	<!--								<h2 class="font">{{ "Имя Фамилия" if not userInfo.firstname and not userInfo.lastname else userInfo.firstname+ ' ' +userInfo.lastname}}</h2>-->
+
+
+	<!--								Lastname Field-->
+										{%  if not userInfo.firstname %}
+										{{ form.lastname(class="form-control", placeholder="Фамилия") }}
+										{% else %}
+										{{ form.lastname(class="form-control", placeholder="{}".format(userInfo.lastname)) }}
+										{% endif %}
+										{% if form.errors.lastname %}
+										<span class="error">{{form.errors.lastname[0]}}</span>
+										{% endif %}
+
+	<!--								Deportment Field -->
+										{%  if not userInfo.firstname %}
+										{{ form.department(class="form-control", style="border: none;", placeholder="Отдел:") }}
+										{% else %}
+										{{ form.department(class="form-control", style="border: none;", placeholder="{}".format(userInfo.deportment)) }}
+										{% endif %}
+										{% if form.errors.department %}
+										<span class="error">{{form.errors.department[0]}}</span>
+										{% endif %}
+	<!--									<span class="font">Отдел: <b>{{ 'не указано' if not userInfo.department else userInfo.department }}</b></span>-->
+										<div class="followers-post">
+											<div class="item" style="width:100%; display: inline-flex;">
+												<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" style="margin: 8px;" class="bi bi-phone" viewBox="0 0 16 16">
+	  <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+	  <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+	</svg>
+	<!--												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.phone }} {% if not userInfo.phone_verification and userInfo.phone %} <a-->
+	<!--														href=""><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.phone %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>-->
+												{%  if not userInfo.firstname %}
+												{{ form.phone(class="form-control", placeholder="99 9999999") }}
+												{% else %}
+												{{ form.phone(class="form-control", placeholder="{}".format(userInfo.phone)) }}
+												{% endif %}
+												{% if form.errors.phone %}
+													<span class="error">{{form.errors.phone[0]}}</span>
+												{% endif %}
+											</div>
+											<div class="item" style="width:100%; display: inline-flex;">
+												<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" style="margin: 8px;" class="bi bi-at" viewBox="0 0 16 16">
+	  <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"/>
+	</svg>
+	<!--												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.phone }} {% if not userInfo.phone_verification and userInfo.phone %} <a-->
+	<!--														href=""><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.phone %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>-->
+												{%  if not userInfo.firstname %}
+												{{ form.email(class="form-control font", placeholder="Электронный адрес") }}
+												{% else %}
+												{{ form.email(class="form-control font", placeholder="{}".format(userInfo.email)) }}
+												{% endif %}
+												{% if form.errors.email %}
+													<span class="error">{{form.errors.email[0]}}</span>
+												{% endif %}
+											</div>
+	<!--					    				<div class="item" style="width:100%;">-->
+	<!--					    					<a href="#">-->
+	<!--												-->
+	<!--												<span class="font" style="font-family: sans-serif !important;">{{ userInfo.email }} {% if not userInfo.email_verification and userInfo.email %} <a-->
+	<!--														href=""><sapn style="color:#f96d00; font-size:15px; margin-left:10px;font-family: sans-serif;">подтвердить</sapn></a> {% elif not userInfo.email %} <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">не указано</sapn> {% endif %}</span>-->
+	<!--											</a>-->
+	<!--					    				</div>-->
+										</div>
+										<p class="font">Здесь размещен текст для информации о сотрудника.</p>
+									</div>
+								</div>
+								<div class="right">
+									<div class="follow-btn">
+										<button class="btn font" type="submit">Сохранить изменения</button>
+<!--										<a class="btn font" href="/profile">Сохранить изменения</a>-->
+									</div>
+									<ul class="social_links">
+										<li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+										<li><a href="#"><i class="fa fa-instagram fa-lg"></i></a></li>
+										<li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>
+									</ul>
+								</div>
+							</form>
+						</div>

@@ -203,14 +203,23 @@ button:focus{
 input,textarea,form-control,
 input:hover,textarea:hover,form-control:hover,
 input:focus,textarea:focus,form-control:focus{
+
 	outline: 0 !important;
-	border:none !important;
+	border:none;
     box-shadow: none !important;
    -webkit-box-shadow: none !important;
    -moz-box-shadow: none !important;
    -moz-transition: none !important;
    -webkit-transition: none !important;
 }
+
+.my-post-form form form-control:hover,
+ .my-post-form form form-control:focus{
+
+    border-bottom: 1px solid #f3f3f3 !important;
+
+}
+
 h1, h2, h3, h4, h5, h6 {
     /*margin-bottom: 0;*/
     font-family: inherit;
@@ -6928,6 +6937,14 @@ body.comment-overlay:after {
 .like-unlike {
     width: 17%;
     float: left;
+}
+
+.style-input {
+    margin: 15px 0 !important;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #f3f3f3 !important;
 }
 
 

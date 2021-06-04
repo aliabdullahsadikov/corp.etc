@@ -1,0 +1,228 @@
+{% extends '/layout.html' %}
+
+{% block body %}
+
+<div id="section-contents">
+    	<div class="container">
+    		<div class="row">
+<!--				Block Search -->
+    			<div class="col-12 col-lg-7 col-md-12 col-sm-12 col-xs-12">
+					<!-- Block 15 -->
+					<div class="block-style-15">
+						<div class="content-wrapper section-one show col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="">
+                            <div class="row">
+                                <div class="col-md-12">
+<!--                                    <div class="searchbar">-->
+<!--                                        <form action="index.html#" method="post">-->
+<!--                                            <input type="text" name="search" placeholder="Я ищу ..." required="">-->
+<!--                                            <button type="submit">-->
+<!--                                                <img src="/static//images/svg/050-magnifying-glass.svg" alt="Zola">-->
+<!--                                            </button>-->
+<!--                                        </form>-->
+<!--                                    </div>-->
+                                    <div class="topbar-01">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="left col-8" style="padding: 0;">
+                                                    <div class="searchbar">
+                                                        <form>
+                                                            <input type="text" id="search" name="fio" placeholder="Я ищу ..." required="">
+                                                            <button type="submit" class="search-button">
+<!--                                                                <img src="/static/images/svg/050-magnifying-glass.svg" alt="Zola">-->
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="right col-4" style="background: #f96d00; color: white; text-align: center; height: 47px;">
+                                                    <div class="user-profile depart" style="top: 10px;">
+                                                            <span>Поиск по отделу</span>
+                            <!--							<img src="/static/images/user1.jpg" alt="Zola">-->
+                                                        <p> <i class="fa fa-chevron-down" style="color: #ffffff;"></i></p>
+                                                        <div class="user-menu">
+                                                            <ul style="overflow: hidden; overflow-y: scroll; max-height: 300px;">
+																{% for department in userInfo.department_list %}
+                                                                	<li ><a>{{ department }}</a></li>
+                                                                {% endfor %}
+																	<li style="display: none;"></li>
+                                                            </ul>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+						</div>
+
+					</div>
+				    <!-- /.Block 15 -->
+					<!-- Block 15 -->
+					<div class="block-style-6">
+								<div class="block-title-1" id="test" style="padding: 10px 30px; border-top: 1px solid #e6e6f2;
+    border-top-right-radius: 5px; border: none;">
+									<h3 class="font" >РЕЗУЛЬТАТЫ ПОИСКА</h3>
+									<span id="count" style="font-size: 14px; float: right;"></span>
+								</div>
+								<div class="tweets">
+
+					         	</div>
+							</div>
+				    <!-- /.Block 15 -->
+				</div>
+<!--				/Block Search-->
+				<!-- Block Right side 3, 4, 5 -->
+    			<div class="col-12 col-lg-5">
+<!--    				<div class="block-style-10">-->
+<!--    					<div class="block-title-1">-->
+<!--							<h3>TRENDING NEWS</h3>-->
+<!--							<img src="assets/images/svg/more-1.svg" alt="Zola">-->
+<!--						</div>-->
+<!--    					<div class="small-list-posts">-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							<div class="item">-->
+<!--								<a href="#">-->
+<!--									<div class="thumbnail-img">-->
+<!--										<img src="assets/images/thumbnail_19.jpg" alt="Zola">-->
+<!--									</div>-->
+<!--									<div class="content">-->
+<!--										<h3>The Canadian model has started its own technology</h3>-->
+<!--										<span>5 MIN AGO</span>-->
+<!--									</div>-->
+<!--								</a>-->
+<!--							</div>-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							<div class="item">-->
+<!--								<a href="#">-->
+<!--									<div class="thumbnail-img">-->
+<!--										<img src="assets/images/thumbnail_20.jpg" alt="Zola">-->
+<!--									</div>-->
+<!--									<div class="content">-->
+<!--										<h3>The Last Statements of the host of the most watched</h3>-->
+<!--										<span>9 MIN AGO</span>-->
+<!--									</div>-->
+<!--								</a>-->
+<!--							</div>-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							<div class="item">-->
+<!--								<a href="#">-->
+<!--									<div class="thumbnail-img">-->
+<!--										<img src="assets/images/thumbnail_21.jpg" alt="Zola">-->
+<!--									</div>-->
+<!--									<div class="content">-->
+<!--										<h3>the Favorite places to venture for travelers from all over the</h3>-->
+<!--										<span>21 MIN AGO</span>-->
+<!--									</div>-->
+<!--								</a>-->
+<!--							</div>-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--							<div class="item">-->
+<!--								<a href="#">-->
+<!--									<div class="thumbnail-img">-->
+<!--										<img src="assets/images/thumbnail_22.jpg" alt="Zola">-->
+<!--									</div>-->
+<!--									<div class="content">-->
+<!--										<h3>The British singer ventures into the world of cinema and</h3>-->
+<!--										<span>8 MIN AGO</span>-->
+<!--									</div>-->
+<!--								</a>-->
+<!--							</div>-->
+<!--							&lt;!&ndash; Item &ndash;&gt;-->
+<!--						</div>-->
+<!--    				</div>-->
+<!--    				<div class="ts-space50"></div>-->
+    				<div class="block-style-15">
+
+								<!--	Flash message section-->
+								{% with messages = get_flashed_messages() %}
+									{% if messages %}
+									<div class="content-wrapper" style="padding: 20px 19px 5px !important; width:100%;">
+										<div class="title" style="text-align: center;">
+											<ul class=flashes>
+												{% for message in messages %}
+										  		<li style="list-style-type:none;">{{ message }}</li>
+												{% endfor %}
+											</ul>
+										</div>
+									</div>
+									{% endif %}
+								{% endwith %}
+								<!--	end-->
+
+						<div class="content-wrapper section-one show info-detail">
+							<div class="left" style="width: auto;">
+								<div class="thumbnail-img">
+
+<!--									<img class="img-fluid" src="{{ url_for('static', filename='images/{}'.format(userInfo.photo))}}" alt="Zola">-->
+
+									<img class="img-fluid" src="{{ url_for('static', filename='/images/hr2.png')}}" alt="Zola">
+
+								</div>
+								<div class="name" style="    padding: 4px 0 0 15px; float: left;width: 72%;">
+									<!-- for firstname and lastname line-->
+									<span class="font" style="font-size:23px;">HR</span>
+									<br><span class="font" style="font-size:17px;"><!--'не указано'--></span>
+
+								</div>
+
+								<div class="details" style="padding: 0 0px; margin-top:15px; width: 100%;">
+									<div class="followers-post">
+										<div class="item" style="width:100%;">  <!--PHONE NUMBER-->
+											<p class="font" style="font-family: revert !important;">Contacts</p>
+					    					<a href="tel:71 5522">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+  <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+  <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+</svg>
+												<span class="font" style="font-family: sans-serif !important;"> <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">(78) 150-00-34</sapn></span>
+											</a>
+					    				</div>
+					    				<div class="item" style="width:100%;">  <!--EMAIL-->
+					    					<a href="#">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-at" viewBox="0 0 16 16">
+  <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"/>
+</svg>
+												<span class="font" style="font-family: sans-serif !important;"> <sapn style="font-size:15px; margin-left:10px;font-family: sans-serif;">rabota@etc.uz</sapn></span>
+											</a>
+					    				</div>
+
+					    			</div>
+<!--									<p class="font">Здесь размещен текст для информации о сотрудника.</p>-->
+								</div>
+							</div>
+							<div class="right" style="width: auto;">
+<!--								<div class="follow-btn update-userinfo-btn">-->
+<!--			    					<a class="btn font" >Обновить данные</a>-->
+<!--			    				</div>-->
+<!--			    				<ul class="social_links" style="padding-left: 0;">-->
+<!--					                <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>-->
+<!--									<li><a href="#"><i class="fa fa-instagram fa-lg"></i></a></li>-->
+<!--									<li><a href="#"><i class="fa fa-telegram fa-lg"></i></a></li>-->
+<!--&lt;!&ndash;					                <li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>&ndash;&gt;-->
+<!--					            </ul>-->
+							</div>
+						</div>
+
+					</div>
+					<div class="ts-space50"></div>
+
+					<div class="ts-space50"></div>
+<!--    				<div class="block-style-4">-->
+<!--    					<a href="#">-->
+<!--    						<img class="img-fluid" src="assets/images/ads_01.jpg" alt="Zola">-->
+<!--    					</a>-->
+<!--    				</div>-->
+    			</div>
+    			<!-- /.Block Right side 3, 4, 5 -->
+				<div class="ts-space50"></div>
+
+    		</div>
+    	</div>
+    </div>
+
+{% endblock %}

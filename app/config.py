@@ -21,3 +21,8 @@ app.config['FLASK_APP'] = 'run.py'
 # config for upload file for users
 UPLOAD_FOLDER = './static/images/profile'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['POST_UPLOAD_FOLDER'] = './static/images/post'
+
+app.config["ALLOWED_IMAGE_EXTENSIONS"] = ['jpg', 'png', 'jpeg', 'gif']
+app.config["MAX_IMAGE_FILESIZE"] = 0.5 * 1024 * 1024
+

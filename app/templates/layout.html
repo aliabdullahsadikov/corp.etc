@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/croppie.css')}}" />
 	<!-- Style -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/imageuploadify.min.css')}}" type="text/css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154444946-1"></script>
     <script>
@@ -57,7 +58,7 @@
 <!--		}-->
 <!--	</style>-->
 </head>
-<body>
+<body id="body">
     <!-- Section Navbar V1 -->
     <header class="header-01">
     	<div class="topbar-01">
@@ -232,23 +233,26 @@
 		    					</div>
 		    				</div>
 		    			</div>
-		    			<div class="user-profile">
-							{% if current_user.is_authenticated %}
+						{% if current_user.is_authenticated %}
+						<div class="user-profile">
 							<img src="{{ url_for('static', filename='/images/user1.jpg')}}" alt="Zola">
 		    				<p>{{ current_user.name }} <i class="fa fa-chevron-down"></i></p>
 		    				<div class="user-menu">
 		    					<ul>
 		    						<li><a href="/profile">Профиль</a></li>
-<!--		    						<li><a href="index.html#">Activity Register</a></li>-->
+		    						<li><a href="/my-articles">Мои статьи</a></li>
 <!--		    						<li><a href="index.html#">Settings</a></li>-->
 <!--		    						<li><a href="index.html#">Help</a></li>-->
 		    						<li><a href="/logout">Выйти</a></li>
 		    					</ul>
 		    				</div>
+						</div>
 							{% else: %}
+						<div class="user-profile" style="top:12px;">
 							<a href="/login">Войти | Регистрация</a>
+						</div>
 							{% endif %}
-		    			</div>
+
 		    		</div>
     			</div>
     		</div>
@@ -402,6 +406,9 @@
 	<!-- /.Section Navbar V1 -->
     {% block body %} {% endblock %}
     <!-- Section Footer -->
+
+
+
 	<div id="section-footer" class="footer-03">
 		<div class="container">
 <!--			<div class="row">-->
@@ -550,5 +557,6 @@
 	<script type="text/javascript" src="{{ url_for('static', filename='js/employees.json')}}"></script>
 	<script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 	<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/imageuploadify.min.js')}}"></script>
 </body>
 </html>

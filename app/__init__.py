@@ -1,11 +1,15 @@
 import logging
 
 from flask import Flask
+from flask_ckeditor import CKEditor
 from flask_login import LoginManager
 # from logging import FileHandler, WARNING
 
 
 app = Flask(__name__)
+
+app.config['CKEDITOR_PKG_TYPE'] = 'standard '
+ckeditor = CKEditor(app)
 
 # for debuging
 logFormatStr = '[%(asctime)s] p%(process)s {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s'

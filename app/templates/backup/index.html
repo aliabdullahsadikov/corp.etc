@@ -1,0 +1,254 @@
+{% extends '/layout.html' %}
+
+{% block title %}
+<title>Corp Site</title>
+{% endblock %}
+
+{% block body %}
+    <!-- Section Contents -->
+    <div id="section-contents" class="homepage-01">
+    	<div class="container">
+    		<div class="row">
+    			<!-- Block Style 1 -->
+    			<div class="col-12 col-lg-3">
+    				<div class="block-style-1">
+    					<!-- Block Title 1 -->
+    					<div class="block-title-1">
+    						<h3 style="font-size: 15px;
+    font-family: revert;">Уведомления </h3>
+    						<img src="{{ url_for('static', filename='/images/svg/more-1.svg')}}" alt="Zola">
+    					</div>
+    					<!-- /.Block Title 1 -->
+    					<!-- Block Content -->
+						{% if notification %}
+							{% for notification in notifies %}
+							<div class="block-content">
+								<div class="block-content_header">
+									<span style="    display: inline-block;
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		padding: 8px 0 0 11px;
+		font-size: 24px;
+		margin-right: 10px;
+		float: left;
+		background: #e7e7e7;">{{ notification.created_at.strftime('%d') }}</span>
+	<!--    							<img src="{{ url_for('static', filename='/images/profile_1.jpg')}}" alt="Zola">-->
+									<p style="font-size: 16px;
+		margin-top: 12px;">{{ notification.created_at.strftime(' %B') }}</p>
+								</div>
+	<!--    						<div class="block-content_thumbnail">-->
+	<!--    							<span class="bg-red">{{ notification.created_at.strftime('doc-thumb %B') }}</span>-->
+	<!--								<a href="index.html#">-->
+	<!--									<img src="{{ url_for('static', filename='/images/thumbnail_01.jpg')}}" alt="Zola">-->
+	<!--								</a>-->
+	<!--    						</div>-->
+								<div class="block-content_text">
+									<a href="/news/{{notification.id }}">
+										<p style="font-size:20px; color: #393e46;">{{ notification.title }}</p>
+									</a>
+									<p>{{ notification.desc }}... <a href="/news/{{notification.id }}">continued</a></p>
+								</div>
+							</div>
+							{% endfor %}
+						{% else %}
+						<div class="block-content">
+							<div class="block-content_header">
+								<p class="font" style="text-align:center;">Новостей пока нет</p>
+							</div>
+						</div>
+						{% endif %}
+    					<!-- /.Block Content -->
+
+    				</div>
+    			</div>
+    			<!-- /.Block Style 1 -->
+    			<!-- Block Style 2 -->
+    			<div class="col-12 col-lg-5">
+    				<div class="block-style-8">
+		    					<!-- Block Title 2 -->
+		    					<div class="block-title-2">
+		    						<h3 class="cyrl-font">Новости</h3>
+		    					</div>
+		    					<!-- /.Block Title 2 -->
+		    					<!-- Contents -->
+								{% if news %}
+								<div class="contents">
+									<!-- Thumbnail -->
+									<div class="thumbnail-1">
+										<span class="bg-grey">{{ news[-1].created_at.strftime('%d %B') }}</span>
+										<a href="/news/{{news[-1].id }}">
+											<img src="{{ url_for('static', filename='images/news/'+ news[-1].image)}}" alt="Zola">
+											<div class="overlay">
+												<div class="overlay-content">
+													<div class="list-users-02">
+									    				<ul class="images">
+									    					<li><img src="{{ url_for('static', filename='/images/hr2.png')}}" alt="Zola"></li>
+									    				</ul>
+									    				<p><span>HR</span></p>
+								    				</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<!-- /.Thumbnail -->
+									<!-- Content Wrapper -->
+									<div class="content-wrapper">
+										<!-- Date -->
+										<div class="date">
+											<h5>{{ news[-1].created_at.strftime('%d %B') }}</h5>
+										</div>
+										<!-- /.Date -->
+										<!-- Title -->
+										<div class="title" style="width: 100%;">
+											<a href="/news/{{news[-1].id }}">
+												<h2 style="font-size: 21px; color: #393e46; font-weight: 500;font-family: revert;">{{ news[-1].title }}</h2>
+											</a>
+										</div>
+										<!-- /.Title -->
+										<!-- Description -->
+										<div class="desc">
+											<p>{{ news[-1].desc }}</p>
+										</div>
+										<!-- /.Description -->
+									</div>
+									<!-- Content Wrapper -->
+									<!-- Small List Posts -->
+									<div class="small-list-posts">
+										<!-- Item -->
+										{% for item in news if item.id != news[-1].id %}
+												<div class="item">
+													<a href="/news/{{item.id }}">
+														<div class="thumbnail-img">
+															<img style="width: 100%;" src="{{ url_for('static', filename='images/news/'+ item.image)}}" alt="Zola">
+														</div>
+														<div class="content">
+															<h3 style="font-size: 19px;color: #393e46;font-weight: 500;font-family: revert;">{{ item.title }}</h3>
+															<span>{{ item.created_at.strftime('%d %B') }}</span>
+														</div>
+													</a>
+												</div>
+
+										{% endfor %}
+										<!-- Item -->
+
+									</div>
+									<!-- /.Small List Posts -->
+								</div>
+								{% else %}
+								<div class="contents">
+									<p style="text-align:center;">Новостей пока нет</p>
+								</div>
+								{% endif %}
+		    					<!-- /.Contents -->
+		    				</div>
+    			</div>
+    			<!-- /.Block Style 2 -->
+    			<!-- Block Style 3, 4, 5 -->
+    			<div class="col-12 col-lg-4">
+					<div class="block-style-5">
+						<div class="block-title">
+							<h3 style="font-size: 15px; font-family: revert;">Документы</h3>
+						</div>
+						<div class="block-content">
+							<div class="block-wrapper">
+								<ul>
+									{% for doc in documents %}
+										<li class="doc-thumb"><a href="/doc/{{ doc.id }}"><div style="position: absolute; width: 36%; color: white; font-size: 13px; padding: 8px 8px; height: 56px;
+    margin: 20% 0px; background: #808080; background: rgb(0 0 0 / 30%);
+text-align: center;"><span>{{ doc.title }}</span></div><img class="img-fluid" src="{{ url_for('static', filename='/images/doc/2.jpg')}}" alt="Documents"></a></li>
+									{% endfor %}
+<!--									<li class="doc-thumb"><a href="index.html#"><img class="img-fluid" src="{{ url_for('static', filename='/images/doc/2.jpg')}}" alt="Zola"></a></li>-->
+<!--									<li class="doc-thumb"><a href="index.html#"><img class="img-fluid" src="{{ url_for('static', filename='/images/doc/2.jpg')}}" alt="Zola"></a></li>-->
+<!--									<li class="doc-thumb"><a href="index.html#"><img class="img-fluid" src="{{ url_for('static', filename='/images/doc/2.jpg')}}" alt="Zola"></a></li>-->
+								</ul>
+							</div>
+						</div>
+					</div>
+<!--    				<div class="block-style-3">-->
+<!--    					<div class="block-title-1">-->
+<!--    						<h3>STAY CONNECTED</h3>-->
+<!--    						<img src="{{ url_for('static', filename='/images/svg/more-1.svg')}}" alt="Zola">-->
+<!--    					</div>-->
+<!--    					<div class="block-content">-->
+<!--    						&lt;!&ndash; Item &ndash;&gt;-->
+<!--							<div class="block-item">-->
+<!--								<div class="block-left">-->
+<!--									<div class="social">-->
+<!--										<i class="fa fa-facebook"></i>-->
+<!--									</div>-->
+<!--									<div class="followers">-->
+<!--										<div class="content">-->
+<!--											<span class="count">75.820 +</span>-->
+<!--											<span class="text">FANS</span>-->
+<!--										</div>-->
+
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div class="block-right">-->
+<!--									<div class="content">-->
+<!--										<a href="index.html#">Like Page</a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--    						&lt;!&ndash; /.Item &ndash;&gt;-->
+<!--    						&lt;!&ndash; Item &ndash;&gt;-->
+<!--							<div class="block-item">-->
+<!--								<div class="block-left">-->
+<!--									<div class="social">-->
+<!--										<i class="fa fa-twitter"></i>-->
+<!--									</div>-->
+<!--									<div class="followers">-->
+<!--										<div class="content">-->
+<!--											<span class="count">27.257 +</span>-->
+<!--											<span class="text">FOLLOWERS</span>-->
+<!--										</div>-->
+
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div class="block-right">-->
+<!--									<div class="content">-->
+<!--										<a href="index.html#">Like Page</a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--    						&lt;!&ndash; /.Item &ndash;&gt;-->
+<!--    						&lt;!&ndash; Item &ndash;&gt;-->
+<!--							<div class="block-item">-->
+<!--								<div class="block-left">-->
+<!--									<div class="social">-->
+<!--										<i class="fa fa-instagram"></i>-->
+<!--									</div>-->
+<!--									<div class="followers">-->
+<!--										<div class="content">-->
+<!--											<span class="count">19.275</span>-->
+<!--											<span class="text">FOLLOWERS</span>-->
+<!--										</div>-->
+
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div class="block-right">-->
+<!--									<div class="content">-->
+<!--										<a href="index.html#">Like Page</a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--    						&lt;!&ndash; /.Item &ndash;&gt;-->
+<!--    					</div>-->
+<!--    				</div>-->
+<!--    				<div class="ts-space50"></div>-->
+<!--    				<div class="block-style-4">-->
+<!--    					<a href="index.html#">-->
+<!--    						<img class="img-fluid" src="{{ url_for('static', filename='/images/ads_01.jpg')}}" alt="Zola">-->
+<!--    					</a>-->
+<!--    				</div>-->
+<!--    				<div class="ts-space50"></div>-->
+
+    			</div>
+    			<!-- /.Block Style 3, 4, 5 -->
+    		</div>
+    	</div>
+    </div>
+    <!-- /.Section Contents -->
+
+{% endblock %}

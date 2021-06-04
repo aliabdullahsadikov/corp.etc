@@ -1,6 +1,11 @@
 import os
 import random
 import string
+import datetime
+import uuid
+
+from hashlib import sha512
+import base64
 
 from flask import render_template, request, redirect, url_for, current_app, flash, abort
 from datetime import datetime
@@ -10,12 +15,14 @@ from flask_login import login_user, logout_user, current_user, login_required
 from flask_bcrypt import Bcrypt
 from werkzeug.urls import url_parse
 from werkzeug.utils import secure_filename
+from werkzeug.datastructures import FileStorage
 from werkzeug.exceptions import HTTPException
 from sqlalchemy.sql import text
+from twilio.rest import Client
 
-from app import app
-from app.models import News, Notification, Doc, User, Userinfo, db, Comment
-from app.forms import LoginForm, RegistrationForm, UserInfoForm
+from app import app, services
+from app.models import News, Notification, Doc, User, Userinfo, db, Comment, Posts
+from app.forms import LoginForm, RegistrationForm, UserInfoForm, UpdateAccountForm, PostForm
 import json, array
 
 
@@ -27,7 +34,7 @@ bcrypt = Bcrypt(app)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    if  current_user.is_authenticated:
+    if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = LoginForm()
     if form.validate_on_submit():
@@ -83,16 +90,44 @@ def logout():
     return redirect(url_for('index'))
 
 
-ALLOWED_EXTENSIONS = {'jpg', 'png', 'jpeg', 'gif'}
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/send-password')
+def send_password():
+    account_sid = os.environ['ACed76723ba05fbdd32acda1969c6bb65f']
+    auth_token = os.environ['ed8526f8818b16ad3e3101f43c3b4ce0']
+    client = Client(account_sid, auth_token)
+
+    message = client.messages \
+        .create(
+        body="Join Earth's mightiest heroes. Like Kevin Bacon.",
+        from_='+17086956101',
+        to='+998946004313'
+    )
+
+    print(message.sid)
+    return True
+
 
 @app.route('/profile', methods=['POST', 'GET'])
 @login_required
 def profile():
     userInfo = Userinfo.query.filter_by(user_id=current_user.id).first()
     form = UserInfoForm()
+    form_registration = UpdateAccountForm()
+
+    # update user's login and password
+    if form_registration.validate_on_submit():
+        user = User.query.filter_by(id=current_user.id).first()
+        user.username = form_registration.username.data
+        hashed_password = bcrypt.generate_password_hash(form_registration.password.data).decode('utf-8')
+        user.password = hashed_password
+        # user = User(username=form_registration.username.data, password=hashed_password)
+        # db.session.add(user)
+        db.session.commit()
+        flash('Ваш логин и пароль обновлены!', 'success')
+        return redirect('/profile')
+    # //
+    form_registration.username.data = current_user.username
 
     if form.validate_on_submit():
         # handle selected file
@@ -120,7 +155,7 @@ def profile():
                 flash('Вы не выбрали фото для профиля')
 
             # has file
-            elif file and allowed_file(file.filename):
+            elif file and services.allowed_file(file.filename):
                 hashed_filename = secure_filename(file.filename)
                 if file.save(os.path.join(app.config['UPLOAD_FOLDER'], hashed_filename)):
                     data['photo'] = hashed_filename
@@ -131,10 +166,10 @@ def profile():
                 flash('Фотография не была сохранена по какой-то причине')
 
             # save
-            newInfo = Userinfo(**data)
-            db.session.add(newInfo)
+            new_info = Userinfo(**data)
+            db.session.add(new_info)
             db.session.commit()
-            newInfo.append_employees()
+            new_info.append_employees()
             flash('Ваша информация сохранена')
             return redirect('/profile')
 
@@ -144,7 +179,7 @@ def profile():
                 photo_name = Userinfo.DEFAULT_IMAGE
                 flash('Вы не выбрали фото для профиля')
 
-            elif file and allowed_file(file.filename):
+            elif file and services.allowed_file(file.filename):
                 letters = string.ascii_lowercase
                 random_str = ''.join(random.choice(letters) for i in range(10))
                 hashed_filename = (random_str + file.filename)
@@ -189,8 +224,59 @@ def profile():
         form.photo.data = userInfo.photo or Userinfo.DEFAULT_IMAGE
 
     # image = base64.b64encode(file_data.DATA).decode('ascii')
-    return render_template('profile.html', form=form, userInfo=userInfo)
+    return render_template('profile.html', form=form, form_registration=form_registration, userInfo=userInfo)
 
+
+@app.route('/my-articles', methods=['POST', 'GET'])
+@login_required
+def my_articles():
+    form = PostForm()
+    if request.method == 'POST':
+
+        post_form_data = form
+        post_model = Posts()
+        post_model.author_id = current_user.id
+        post_model.title = post_form_data.title.data
+        post_model.desc = post_form_data.desc.data
+        post_model.slug = post_form_data.title.data.replace(' ', '_')
+        post_model.content = post_form_data.content.data
+        post_model.created_at = datetime.utcnow()
+        post_model.isActive = False
+
+        # handle selected file
+        file = post_form_data.image.data
+
+        # if file don't selected
+        if not file:
+            post_model.image = post_model.DEFAULT_IMAGE
+
+        # if has file
+        elif file and services.validate_file(file):
+            exten = file.filename.rsplit('.', 1)[1].lower()
+            # name_random = range(5000)
+            name_random = str(uuid.uuid4()) # hashed name
+            filename = name_random +'.'+ exten
+            basedir = os.path.abspath(os.path.dirname(__file__))
+            file.save(os.path.join(basedir, app.config['POST_UPLOAD_FOLDER'], filename))
+            # file.save(os.path.join(basedir, app.config['POST_UPLOAD_FOLDER'], filename)):
+            #     print('pillo')
+            #     post_model.image = filename
+            #     # if someone else
+            # else:
+            #     print(post_model)
+            #     post_model.image = post_model.DEFAULT_IMAGE
+            #     flash('Фотография не была сохранена по какой-то причине')
+            post_model.image = filename
+
+        db.session.add(post_model)
+        db.session.commit()
+        db.session.refresh(post_model)
+        if post_model.id:
+            post = Posts.query.filter_by(id=post_model.id).first()
+            render_template('my-articles.html', form=form, post=post)
+
+        # print(dict(i.data))
+    return render_template('my-articles.html', form=form)
 
 # def append_employees():
 #     userinfo = Userinfo.query.all()
@@ -242,12 +328,14 @@ def comment():
             "user_id": current_user.__getattr__("id"),
             "news_id": post["news_id"],
             "parent_id": post["parent_id"],
-            "message": post['message'],
+            "message": post['message'].strip(),
             "created_at": datetime.utcnow()
         }
-        comment = Comment(**data)
-        db.session.add(comment)
-        db.session.commit()
+        if data['message'] != "":
+            comment = Comment(**data)
+            db.session.add(comment)
+            db.session.commit()
+
 
 
     #

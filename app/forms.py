@@ -1,5 +1,6 @@
-from wtforms import StringField, BooleanField, PasswordField, SubmitField, validators, ValidationError, SelectField, IntegerField, TextField
+from wtforms import StringField, BooleanField, DateTimeField, TextAreaField, PasswordField, SubmitField, validators, ValidationError, SelectField, IntegerField, TextField
 from flask_wtf import FlaskForm
+from flask_ckeditor import CKEditorField
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 
 
@@ -10,6 +11,12 @@ class LoginForm(FlaskForm):
     username = StringField('Имя', [validators.DataRequired(), validators.Length(min=3, max=35)])
     password = PasswordField('Пароль', [validators.DataRequired(), validators.Length(min=6, max=200)])
     submit = SubmitField('Войти сейчас')
+
+
+class UpdateAccountForm(FlaskForm):
+    username = StringField('Имя', [validators.DataRequired(), validators.Length(min=3, max=35)])
+    password = PasswordField('Пароль', [validators.DataRequired(), validators.Length(min=6, max=200)])
+    submit = SubmitField('Сохранить')
 
 
 class RegistrationForm(FlaskForm):
@@ -46,6 +53,13 @@ class UserInfoForm(FlaskForm):
     telegram = StringField(u'Telegram')
     submit = SubmitField()
 
+
+class PostForm(FlaskForm):
+    title = StringField(u'Заголовок', [validators.DataRequired(), validators.Length(min=50, max=150, message="Заголовок должен содержать от 50 до 150 символов.")])
+    desc = TextAreaField(u'Описание', [validators.DataRequired(), validators.Length(min=100, max=200, message="Количество символов в описании должно быть не менее 100 и не более 200 символов.")])
+    content = CKEditorField(u'Содержание', [validators.DataRequired()])
+    image = FileField(u'Фото поста', [validators.DataRequired(), FileAllowed(['jpg', 'png'], message="Фото должно быть (.jpg .png .gif)  формате.")])
+    submit = SubmitField()
 
 # class CommentForm(FlaskForm):
 #     message = StringField(u"Комментария", [validators.Length(max = 500) ])
